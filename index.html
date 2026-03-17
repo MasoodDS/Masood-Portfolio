@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masood BAI | Data Analyst Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #0f172a;
+      background: #ffffff;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+    .logo h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .logo span {
+      font-size: 0.75rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      font-weight: 600;
+      color: #334155;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #334155 100%);
+      color: white;
+      padding: 90px 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .tag {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+    .hero h2 {
+      font-size: 3.2rem;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      max-width: 700px;
+    }
+    .hero p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      max-width: 620px;
+    }
+    .hero-buttons {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+    .btn-primary {
+      background: white;
+      color: #0f172a;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: 22px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .mini-card {
+      border-radius: 24px;
+      padding: 24px;
+      background: white;
+      color: #0f172a;
+    }
+    .mini-card.dark {
+      background: #0f172a;
+      color: white;
+      grid-column: span 2;
+    }
+    .mini-card.gold {
+      background: #fbbf24;
+    }
+    section { padding: 85px 0; }
+    .section-tag {
+      color: #d97706;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .section-text {
+      color: #475569;
+      max-width: 760px;
+    }
+    .about-grid, .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .stats-grid, .services-grid, .projects-grid {
+      display: grid;
+      gap: 22px;
+      margin-top: 34px;
+    }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(4, 1fr); }
+    .projects-grid { grid-template-columns: repeat(3, 1fr); }
+    .stat-box, .service-box, .project-box {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+    }
+    .stat-box h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .services {
+      background: #f8fafc;
+    }
+    .service-box h3, .project-box h3 {
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+    .project-image {
+      height: 220px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+      margin-bottom: 18px;
+    }
+    .contact {
+      background: #0f172a;
+      color: white;
+    }
+    .contact p { color: #cbd5e1; }
+    .contact-form {
+      background: white;
+      color: #0f172a;
+      border-radius: 28px;
+      padding: 28px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      font-size: 1rem;
+    }
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .contact-form button {
+      width: 100%;
+      border: none;
+      background: #0f172a;
+      color: white;
+      padding: 14px;
+      border-radius: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      padding: 24px 0;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 992px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h2 { font-size: 2.5rem; }
+      nav ul { gap: 16px; font-size: 0.95rem; }
+    }
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .hero h2 { font-size: 2rem; }
+      .section-title { font-size: 2rem; }
+      .stats-grid, .card-grid { grid-template-columns: 1fr; }
+      .mini-card.dark { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <h1>MASOOD BAI</h1>
+        <span>Data Analyst Portfolio</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">SQL • Power BI • Excel • Data Analysis</div>
+        <h2>Turning data into clear insights, accurate reporting, and better decisions.</h2>
+        <p>
+          Data Analyst with 5+ years of experience in management information, reporting, dashboard development, and data analysis using SQL, Excel, Power BI, and Python.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#contact">Contact Me</a>
+          <a class="btn btn-secondary" href="#projects">View Projects</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-grid">
+          <div class="mini-card">
+            <h3>Why Work With Me</h3>
+            <p>Experienced in dashboards, reporting automation, trend analysis, and delivering reliable business insights.</p>
+          </div>
+          <div class="mini-card gold">
+            <h3>5+ Years</h3>
+            <p>Professional experience across banking, analytics, and business reporting environments.</p>
+          </div>
+          <div class="mini-card dark">
+            <h3>Power BI • SQL • Excel • Python</h3>
+            <p>Strong technical foundation in data cleaning, automation, dashboarding, and KPI reporting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div>
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">Data Analyst focused on accuracy, automation, and stakeholder-ready reporting.</h2>
+        <p class="section-text">
+          I have experience working with management information, business reporting, and performance analysis. My background includes building dashboards, cleaning and analysing large datasets, improving data quality, and delivering insights that support operational and strategic decision-making.
+        </p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box"><h3>5+</h3><p>Years of Experience</p></div>
+        <div class="stat-box"><h3>10+</h3><p>Dashboards Built</p></div>
+        <div class="stat-box"><h3>50,000+</h3><p>Rows Analysed</p></div>
+        <div class="stat-box"><h3>40%</h3><p>Refresh Load Reduction</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="skills">
+    <div class="container">
+      <div class="section-tag">Technical Skills</div>
+      <h2 class="section-title">Tools and technologies I use to deliver reliable analysis.</h2>
+      <div class="services-grid">
+        <div class="service-box">
+          <h3>Programming</h3>
+          <p>Python, SQL, R, and VBA for data analysis, automation, transformation, and reporting support.</p>
+        </div>
+        <div class="service-box">
+          <h3>Visualisation</h3>
+          <p>Power BI, Tableau, Advanced Excel, PowerPoint, and Qlik for clear, stakeholder-ready dashboards.</p>
+        </div>
+        <div class="service-box">
+          <h3>Databases</h3>
+          <p>MSSQL Server, MySQL, Oracle, PostgreSQL, Teradata, MongoDB, and Sybase.</p>
+        </div>
+        <div class="service-box">
+          <h3>Core Strengths</h3>
+          <p>Data quality, dashboard development, reporting automation, trend analysis, and business insight delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-tag">Projects</div>
+      <h2 class="section-title">Academic and technical projects demonstrating applied data science skills.</h2>
+      <div class="projects-grid">
+        <div class="project-box">
+          <div class="project-image"></div>
+          <h3>Fake News Detection using Machine Learning</h3>
+          <p>Built an NLP-based classification model using Python, Scikit-learn, TF-IDF, and lemmatisation. Trained models including Random Forest, SVM, and Logistic Regression, achieving 94% accuracy.</p>
+        </div>
+        <div class="project-box">
+          <div class="project-image"></div>
+          <h3>Stroke Prediction using Data Science</h3>
+          <p>Developed a Streamlit app using Python and logistic regression for real-time stroke-risk prediction. Cleaned and analysed 5,000+ health records and improved usability through a modular data-entry interface.</p>
+        </div>
+        <div class="project-box">
+          <div class="project-image"></div>
+          <h3>Professional Dashboard & Reporting Work</h3>
+          <p>Created and maintained multiple Power BI dashboards, optimised refresh pipelines, automated workflows, and improved reporting consistency across operational datasets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-tag" style="color:#fbbf24;">Contact</div>
+        <h2 class="section-title">Let’s connect about data analyst opportunities, reporting, and dashboard work.</h2>
+        <p>
+          Email: masood7572@gmail.com<br>
+          Phone: +44 7572952121<br>
+          LinkedIn: linkedin.com/in/masood-baig-indikar<br>
+          Location: Stockton on Tees, UK
+        </p>
+      </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email Address" />
+        <input type="text" placeholder="Phone Number" />
+        <textarea placeholder="Tell me about the role, project, or opportunity"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Masood BAI. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
