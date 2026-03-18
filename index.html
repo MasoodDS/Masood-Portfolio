@@ -3,867 +3,373 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masood BAI | Data Analyst & Data Engineering Portfolio</title>
-  <meta
-    name="description"
-    content="Masood BAI - Data Analyst with Data Engineering skills in SQL, Power BI, Python, Azure, AWS, ETL, reporting, and dashboard development."
-  />
+  <title>Masood BAI | Data Analyst Portfolio</title>
+  <meta name="description" content="Masood BAI - Data Analyst with data engineering skills in SQL, Power BI, Python, Azure, AWS, and ETL." />
   <style>
     :root {
       --bg: #0b1220;
-      --bg-soft: #111a2b;
+      --bg2: #132238;
       --surface: #ffffff;
-      --surface-soft: #f8fafc;
-      --card: rgba(255,255,255,0.08);
+      --soft: #f8fafc;
       --text: #0f172a;
-      --text-light: #e5eef9;
       --muted: #64748b;
-      --muted-light: #c7d2e0;
       --line: #e2e8f0;
       --brand: #2563eb;
-      --brand-dark: #1d4ed8;
       --accent: #f59e0b;
-      --success: #16a34a;
-      --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.18);
-      --shadow-md: 0 14px 30px rgba(15, 23, 42, 0.08);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --max: 1180px;
-      --nav-h: 78px;
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --max: 1140px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: linear-gradient(180deg, #f8fafc 0%, #eef4fb 100%);
       line-height: 1.6;
     }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(var(--max), 92%);
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 88px 0;
-      scroll-margin-top: 92px;
-    }
-
-    .section-head {
-      margin-bottom: 32px;
-      max-width: 760px;
-    }
-
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(var(--max), 92%); margin: 0 auto; }
+    section { padding: 80px 0; scroll-margin-top: 90px; }
     .eyebrow {
-      display: inline-block;
       color: var(--brand);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.2em;
       text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.2vw, 2.9rem);
+      line-height: 1.15;
       margin-bottom: 12px;
     }
-
-    .section-title {
-      font-size: clamp(2rem, 3.4vw, 3rem);
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    .section-text {
-      color: var(--muted);
-      font-size: 1rem;
-    }
+    .section-text { color: var(--muted); max-width: 680px; }
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(11, 18, 32, 0.8);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(11,18,32,.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-
     .nav {
-      min-height: var(--nav-h);
+      min-height: 74px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 16px;
     }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand strong {
-      color: #fff;
-      font-size: 1.08rem;
-      letter-spacing: 0.08em;
-    }
-
+    .brand strong { color: white; display: block; letter-spacing: .08em; }
     .brand span {
-      color: #a9b7ca;
-      font-size: 0.75rem;
+      color: #b9c7d9;
+      font-size: .75rem;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      margin-top: 2px;
+      letter-spacing: .18em;
     }
-
     .nav-links {
       list-style: none;
       display: flex;
-      align-items: center;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
     }
-
     .nav-links a {
-      color: #d8e4f3;
-      font-size: 0.95rem;
+      color: #dbe5f2;
+      font-size: .92rem;
       font-weight: 700;
       padding: 8px 10px;
       border-radius: 999px;
-      transition: 0.25s ease;
     }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-    }
-
+    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,.1); color: white; }
     .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
+      background: white;
       color: var(--bg);
-      font-weight: 800;
-      padding: 11px 16px;
+      padding: 10px 16px;
       border-radius: 999px;
-      transition: 0.25s ease;
+      font-weight: 800;
       white-space: nowrap;
     }
 
-    .nav-cta:hover {
-      transform: translateY(-1px);
-    }
-
-    .menu-btn {
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.18);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
     .hero {
+      background: radial-gradient(circle at top left, rgba(37,99,235,.22), transparent 26%), linear-gradient(135deg, #08101e 0%, #101b31 55%, #183056 100%);
+      color: white;
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(circle at top left, rgba(37,99,235,0.28), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(245,158,11,0.12), transparent 20%),
-        linear-gradient(135deg, #08101e 0%, #101b31 48%, #17294a 100%);
-      color: #fff;
     }
-
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
-      background-size: 28px 28px;
-      opacity: 0.28;
+      background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 26px 26px;
+      opacity: .25;
       pointer-events: none;
     }
-
     .hero-inner {
       position: relative;
       z-index: 1;
-      padding: 92px 0 72px;
       display: grid;
-      grid-template-columns: 1.18fr 0.9fr;
-      gap: 36px;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 32px;
       align-items: center;
+      padding: 88px 0 64px;
     }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
+    .pill {
+      display: inline-block;
+      padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
       text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .74rem;
+      font-weight: 800;
       margin-bottom: 18px;
     }
-
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.9rem);
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
       line-height: 1.05;
-      margin-bottom: 16px;
-      max-width: 760px;
-    }
-
-    .hero p {
+      margin-bottom: 14px;
       max-width: 720px;
-      color: #d7e2f0;
-      font-size: 1.05rem;
     }
-
-    .hero-actions,
-    .hero-links {
+    .hero p {
+      color: #d8e4f3;
+      max-width: 660px;
+      font-size: 1.02rem;
+    }
+    .hero-actions, .hero-links {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-
-    .hero-actions {
-      margin-top: 28px;
-    }
-
-    .hero-links {
-      margin-top: 18px;
-    }
-
+    .hero-actions { margin-top: 24px; }
+    .hero-links { margin-top: 16px; }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 150px;
-      padding: 14px 20px;
-      border-radius: 16px;
+      padding: 13px 18px;
+      border-radius: 15px;
       font-weight: 800;
-      transition: 0.25s ease;
+      min-width: 145px;
     }
-
-    .btn-primary {
-      background: #fff;
-      color: var(--bg);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.12);
-    }
-
-    .link-chip {
-      color: #fff;
+    .btn-primary { background: white; color: var(--bg); }
+    .btn-secondary { color: white; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
+    .chip {
+      padding: 9px 13px;
       border-radius: 999px;
-      padding: 10px 14px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      font-size: 0.93rem;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: .9rem;
       font-weight: 700;
     }
-
-    .hero-panel {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 30px;
-      padding: 18px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    .hero-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      padding: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.18);
     }
-
-    .hero-grid {
+    .hero-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
-
-    .hero-card {
-      border-radius: 24px;
-      padding: 22px;
-      min-height: 160px;
-      background: #fff;
+    .mini {
+      background: white;
       color: var(--text);
-    }
-
-    .hero-card.dark {
-      grid-column: span 2;
-      background: linear-gradient(135deg, #0f172a, #172554);
-      color: #fff;
-    }
-
-    .hero-card.gold {
-      background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    }
-
-    .hero-card small {
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #7c2d12;
-    }
-
-    .hero-card.dark small {
-      color: #93c5fd;
-    }
-
-    .hero-card:not(.gold):not(.dark) small {
-      color: var(--brand);
-    }
-
-    .hero-card h3 {
-      font-size: 1.18rem;
-      margin-bottom: 8px;
-    }
-
-    .hero-card strong {
-      display: block;
-      font-size: 2rem;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .stats-bar {
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .stat {
-      background: #fff;
-      border: 1px solid rgba(226,232,240,0.75);
       border-radius: 20px;
       padding: 22px;
-      box-shadow: var(--shadow-md);
     }
-
-    .stat h3 {
-      font-size: 1.9rem;
-      margin-bottom: 6px;
-      color: var(--brand-dark);
+    .mini.dark { background: linear-gradient(135deg, #0f172a, #172554); color: white; grid-column: span 2; }
+    .mini small {
+      display: block;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--brand);
     }
-
-    .stat p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .card-grid-2 {
+    .mini.dark small { color: #93c5fd; }
+    .mini strong { display: block; font-size: 1.9rem; line-height: 1; margin-bottom: 8px; }
+    .stats-grid, .skills-grid, .projects-grid, .edu-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.95fr;
-      gap: 24px;
+      gap: 18px;
     }
-
-    .panel {
-      background: #fff;
+    .stats-grid { grid-template-columns: repeat(4, 1fr); margin-top: 28px; }
+    .skills-grid { grid-template-columns: repeat(4, 1fr); }
+    .projects-grid { grid-template-columns: repeat(3, 1fr); }
+    .edu-grid { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: white;
       border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 30px;
-      box-shadow: var(--shadow-md);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      height: 100%;
     }
-
-    .list {
+    .card h3 { font-size: 1.08rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); }
+    .two-col {
       display: grid;
-      gap: 14px;
-      margin-top: 18px;
+      grid-template-columns: 1.15fr .95fr;
+      gap: 22px;
     }
+    .list { display: grid; gap: 12px; margin-top: 16px; }
+    .list div { color: var(--muted); }
+    .list strong { color: var(--text); }
 
-    .list-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      color: var(--muted);
-    }
-
-    .list-dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--success);
-      margin-top: 8px;
-      flex: 0 0 auto;
-    }
-
-    .highlight-grid,
-    .skills-grid,
-    .project-grid,
-    .education-grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .highlight-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .skills-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .project-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .education-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card-box {
-      background: #fff;
+    .experience-wrap { display: grid; gap: 18px; }
+    .job {
+      background: white;
       border: 1px solid var(--line);
       border-radius: 24px;
-      padding: 26px;
-      box-shadow: var(--shadow-md);
-      height: 100%;
-    }
-
-    .card-box h3 {
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-    }
-
-    .card-box p {
-      color: var(--muted);
-    }
-
-    .timeline {
+      padding: 24px;
+      box-shadow: var(--shadow);
       display: grid;
-      gap: 20px;
+      grid-template-columns: 220px 1fr;
+      gap: 22px;
     }
-
-    .timeline-item {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 26px;
-      box-shadow: var(--shadow-md);
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 24px;
-    }
-
-    .timeline-meta {
+    .job-meta {
       border-right: 1px solid var(--line);
-      padding-right: 18px;
+      padding-right: 16px;
     }
-
-    .timeline-meta h3 {
-      font-size: 1.08rem;
-      margin-bottom: 4px;
-    }
-
-    .timeline-meta .company {
-      font-weight: 800;
-      color: var(--brand-dark);
-    }
-
-    .timeline-meta p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .timeline-content ul {
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .timeline-content li + li {
-      margin-top: 8px;
-    }
-
-    .skills-grid .card-box {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skills-grid .card-box::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--brand), var(--accent));
-    }
-
-    .project-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 18px;
-      box-shadow: var(--shadow-md);
-      height: 100%;
-    }
+    .job-meta h3 { font-size: 1.05rem; margin-bottom: 4px; }
+    .job-meta .company { color: var(--brand); font-weight: 800; }
+    .job-meta p { color: var(--muted); font-size: .94rem; }
+    .job ul { padding-left: 18px; color: var(--muted); }
+    .job li + li { margin-top: 7px; }
 
     .project-visual {
-      height: 180px;
-      border-radius: 18px;
-      margin-bottom: 18px;
-      background:
-        linear-gradient(135deg, rgba(37,99,235,0.98), rgba(15,23,42,0.98));
+      height: 150px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(37,99,235,.98), rgba(15,23,42,.98));
       position: relative;
       overflow: hidden;
     }
-
-    .project-visual::before,
-    .project-visual::after {
+    .project-visual::before, .project-visual::after {
       content: "";
       position: absolute;
-      background: rgba(255,255,255,0.13);
-      border-radius: 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.14);
     }
-
-    .project-visual::before {
-      inset: 18px 18px 72px;
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-
-    .project-visual::after {
-      left: 18px;
-      right: 88px;
-      bottom: 18px;
-      height: 34px;
-    }
-
-    .project-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-    }
-
-    .project-card p {
-      color: var(--muted);
-    }
-
+    .project-visual::before { inset: 16px 16px 58px; border: 1px solid rgba(255,255,255,.18); }
+    .project-visual::after { left: 16px; right: 84px; bottom: 16px; height: 28px; }
     .tags {
       display: flex;
-      flex-wrap: wrap;
       gap: 8px;
-      margin: 14px 0 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
     }
-
     .tags span {
       background: #eef4ff;
-      color: var(--brand-dark);
+      color: var(--brand);
+      padding: 6px 10px;
       border-radius: 999px;
-      padding: 7px 11px;
-      font-size: 0.82rem;
+      font-size: .8rem;
       font-weight: 700;
-    }
-
-    .project-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .project-actions a {
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    .project-actions a.primary {
-      background: var(--brand);
-      color: #fff;
-      border-color: var(--brand);
     }
 
     .resume-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 20px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
     }
-
-    .resume-primary {
+    .resume-main {
       background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #fff;
+      color: white;
       border: none;
     }
-
-    .resume-primary p {
-      color: #dbe7f5;
-    }
-
+    .resume-main p { color: #dbe4f0; }
     .resume-actions {
       display: flex;
-      flex-wrap: wrap;
       gap: 12px;
-      margin-top: 20px;
+      flex-wrap: wrap;
+      margin-top: 16px;
     }
-
     .resume-actions a {
       padding: 12px 16px;
       border-radius: 14px;
       font-weight: 800;
     }
-
-    .resume-actions .solid {
-      background: #fff;
-      color: var(--bg);
-    }
-
-    .resume-actions .outline {
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
-      color: #fff;
-    }
+    .resume-actions .solid { background: white; color: var(--bg); }
+    .resume-actions .outline { color: white; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
 
     .contact {
-      background:
-        radial-gradient(circle at top right, rgba(37,99,235,0.18), transparent 24%),
-        linear-gradient(135deg, #08101e 0%, #111d34 50%, #183056 100%);
-      color: #fff;
+      background: linear-gradient(135deg, #08101e 0%, #111d34 55%, #183056 100%);
+      color: white;
     }
-
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 0.95fr;
-      gap: 22px;
+      grid-template-columns: 1fr .95fr;
+      gap: 20px;
     }
-
-    .contact-box,
-    .contact-form {
-      border-radius: 28px;
-      padding: 28px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(10px);
+    .contact-box, .contact-form {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 26px;
+      padding: 26px;
     }
-
-    .contact-box p {
-      color: #d8e4f3;
-    }
-
+    .contact-box p { color: #d8e4f3; }
     .contact-list {
       display: grid;
       gap: 12px;
       margin-top: 18px;
     }
-
-    .contact-list a,
-    .contact-list div {
-      display: block;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #fff;
+    .contact-list a, .contact-list div {
+      padding: 13px 15px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      color: white;
     }
-
-    .contact-form input,
-    .contact-form textarea {
+    .contact-form input, .contact-form textarea {
       width: 100%;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      padding: 14px 16px;
-      border-radius: 16px;
+      padding: 13px 15px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: white;
+      margin-bottom: 12px;
       font-size: 1rem;
-      margin-bottom: 14px;
-      outline: none;
     }
-
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      color: #d6e0ee;
-    }
-
-    .contact-form textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: #d8e4f3; }
+    .contact-form textarea { min-height: 140px; resize: vertical; }
     .contact-form button {
       width: 100%;
       border: none;
-      border-radius: 16px;
-      padding: 14px 18px;
-      background: #fff;
+      background: white;
       color: var(--bg);
+      padding: 13px 16px;
+      border-radius: 14px;
       font-weight: 800;
       cursor: pointer;
-      transition: 0.25s ease;
     }
+    .note { color: #d8e4f3; font-size: .9rem; margin-top: 10px; }
+    footer { background: #030712; color: #9fb0c5; text-align: center; padding: 20px 0; font-size: .92rem; }
 
-    .contact-form button:hover {
-      transform: translateY(-1px);
+    @media (max-width: 1080px) {
+      .hero-inner, .two-col, .resume-grid, .contact-grid { grid-template-columns: 1fr; }
+      .stats-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
-    .contact-note {
-      color: #d6e0ee;
-      font-size: 0.92rem;
-      margin-top: 12px;
-    }
-
-    footer {
-      background: #030712;
-      color: #9fb0c5;
-      text-align: center;
-      padding: 22px 0;
-      font-size: 0.94rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 1100px) {
-      .hero-inner,
-      .card-grid-2,
-      .resume-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .highlight-grid,
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .stats-bar {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     @media (max-width: 860px) {
-      .menu-btn {
-        display: inline-flex;
-      }
-
-      .nav-right {
-        position: relative;
-      }
-
-      .nav-menu {
-        position: absolute;
-        top: calc(100% + 12px);
-        right: 0;
-        width: min(320px, 90vw);
-        background: rgba(11, 18, 32, 0.96);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 20px;
-        padding: 14px;
-        display: none;
-        box-shadow: var(--shadow-lg);
-      }
-
-      .nav-menu.open {
-        display: block;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 6px;
-      }
-
-      .nav-links a {
-        display: block;
-      }
-
-      .desktop-cta {
-        display: none;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-meta {
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-        padding-right: 0;
-        padding-bottom: 14px;
-      }
-
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
+      .nav { flex-wrap: wrap; padding: 14px 0; }
+      .nav-links { width: 100%; }
+      .job { grid-template-columns: 1fr; }
+      .job-meta { border-right: none; border-bottom: 1px solid var(--line); padding-right: 0; padding-bottom: 12px; }
+      .edu-grid { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 640px) {
-      .section {
-        padding: 74px 0;
-      }
-
-      .hero-inner {
-        padding: 74px 0 64px;
-      }
-
-      .hero-grid,
-      .highlight-grid,
-      .skills-grid,
-      .project-grid,
-      .stats-bar {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card.dark {
-        grid-column: span 1;
-      }
-
-      .hero-actions,
-      .hero-links,
-      .resume-actions,
-      .project-actions {
-        flex-direction: column;
-      }
-
-      .btn,
-      .resume-actions a,
-      .project-actions a {
-        width: 100%;
-      }
+      section { padding: 68px 0; }
+      .hero-inner { padding: 72px 0 58px; }
+      .hero-stats, .stats-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .mini.dark { grid-column: span 1; }
+      .hero-actions, .hero-links, .resume-actions { flex-direction: column; }
+      .btn, .resume-actions a, .nav-cta { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -872,226 +378,139 @@
     <div class="container nav">
       <a href="#home" class="brand">
         <strong>MASOOD BAI</strong>
-        <span>Data Analyst & Data Engineering Portfolio</span>
+        <span>Data Analyst Portfolio</span>
       </a>
-
-      <div class="nav-right">
-        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">Menu</button>
-
-        <div class="nav-menu" id="navMenu">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#highlights">Highlights</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <a href="#contact" class="nav-cta desktop-cta">Hire Me</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Contact</a>
     </div>
   </header>
 
-  <section class="hero section" id="home">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="reveal show">
-          <div class="hero-pill">SQL • Power BI • Azure • AWS • ETL • Data Engineering</div>
-          <h1>Data Analyst with strong Data Engineering, reporting, and cloud data skills.</h1>
-          <p>
-            I help turn complex data into accurate reporting, scalable pipelines, and clear business insight. With 5+ years of experience across banking and analytics environments, I work with SQL, Power BI, Python, Azure, AWS, Snowflake, and ETL processes to support decision-making and improve data reliability.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#experience">View Experience</a>
-            <a class="btn btn-secondary" href="#projects">Explore Projects</a>
-          </div>
-
-          <div class="hero-links">
-            <a class="link-chip" href="mailto:masood7572@gmail.com">Email</a>
-            <a class="link-chip" href="https://linkedin.com/in/masood-baig-indikar" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="link-chip" href="#resume">Resume</a>
-            <a class="link-chip" href="#contact">Contact</a>
-          </div>
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <div class="pill">SQL • Power BI • Azure • AWS • ETL</div>
+        <h1>Data Analyst with data engineering and reporting skills.</h1>
+        <p>
+          I build dashboards, improve data quality, automate reporting, and support cloud-based data workflows using SQL, Power BI, Python, Azure, AWS, and ETL tools.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#experience">View Experience</a>
+          <a class="btn btn-secondary" href="#projects">View Projects</a>
         </div>
-
-        <div class="hero-panel reveal show">
-          <div class="hero-grid">
-            <div class="hero-card">
-              <small>Positioning</small>
-              <h3>Analyst who can also build</h3>
-              <p>Strong in reporting, business insight, data quality, ETL, warehouse concepts, and dashboard delivery.</p>
-            </div>
-
-            <div class="hero-card gold">
-              <small>Experience</small>
-              <strong>5+ Years</strong>
-              <p>Across data analysis, data engineering support, BI reporting, and stakeholder-focused delivery.</p>
-            </div>
-
-            <div class="hero-card dark">
-              <small>Core Stack</small>
-              <h3>Power BI • SQL • Python • Azure • AWS • Snowflake</h3>
-              <p>I work across data pipelines, data validation, dashboarding, warehouse environments, and operational reporting with a strong focus on accuracy and usability.</p>
-            </div>
-          </div>
+        <div class="hero-links">
+          <a class="chip" href="mailto:masood7572@gmail.com">Email</a>
+          <a class="chip" href="https://linkedin.com/in/masood-baig-indikar" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="chip" href="#resume">Resume</a>
         </div>
       </div>
 
-      <div class="stats-bar reveal">
-        <div class="stat">
-          <h3>10+</h3>
-          <p>Dashboards built and maintained for operational and reporting use.</p>
-        </div>
-        <div class="stat">
-          <h3>50,000+</h3>
-          <p>Rows cleaned and analysed to improve reporting integrity and insight.</p>
-        </div>
-        <div class="stat">
-          <h3>40%</h3>
-          <p>Reduction in refresh and query load times through optimisation.</p>
-        </div>
-        <div class="stat">
-          <h3>10+ hrs</h3>
-          <p>Monthly time saved through automation and improved reporting workflows.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about">
-    <div class="container">
-      <div class="card-grid-2">
-        <div class="panel reveal">
-          <div class="eyebrow">About Me</div>
-          <h2 class="section-title">A Data Analyst who brings reporting strength and data engineering capability together.</h2>
-          <p class="section-text">
-            I am a Data Analyst with strong Data Engineering skills and experience working with SQL Server, Azure Data Factory, AWS, Snowflake, ETL pipelines, and Power BI dashboards. I have worked in banking and analytics environments where I built data pipelines, cleaned large datasets, designed warehouse models, and delivered reporting solutions for stakeholders.
-          </p>
-          <div class="list">
-            <div class="list-item"><span class="list-dot"></span><span>Experienced in data analysis, profiling, cleansing, validation, and mismatch identification.</span></div>
-            <div class="list-item"><span class="list-dot"></span><span>Strong understanding of ETL, data modelling, data warehousing, dashboarding, and reporting automation.</span></div>
-            <div class="list-item"><span class="list-dot"></span><span>Comfortable working across Azure, AWS, SQL, Power BI, Python, and structured reporting workflows.</span></div>
+      <div class="hero-card">
+        <div class="hero-stats">
+          <div class="mini">
+            <small>Experience</small>
+            <strong>5+ Years</strong>
+            <p>Analytics, BI, reporting, and data workflow support.</p>
           </div>
-        </div>
-
-        <div class="panel reveal">
-          <div class="eyebrow">Profile Snapshot</div>
-          <h2 class="section-title" style="font-size: 1.7rem;">Professional identity, clearly presented.</h2>
-          <div class="list">
-            <div class="list-item"><span class="list-dot"></span><span><strong>Current role:</strong> Data Analyst at Citi Bank</span></div>
-            <div class="list-item"><span class="list-dot"></span><span><strong>Location:</strong> Stockton on Tees, UK</span></div>
-            <div class="list-item"><span class="list-dot"></span><span><strong>Education:</strong> Master’s in Applied Data Science, University of Sunderland</span></div>
-            <div class="list-item"><span class="list-dot"></span><span><strong>Positioning:</strong> Data Analyst with Data Engineering and BI reporting skills</span></div>
-            <div class="list-item"><span class="list-dot"></span><span><strong>Open to:</strong> Data Analyst, BI Analyst, Reporting Analyst, and data-focused engineering roles</span></div>
+          <div class="mini">
+            <small>Focus</small>
+            <strong>BI + ETL</strong>
+            <p>Dashboards, validation, data pipelines, and reporting.</p>
+          </div>
+          <div class="mini dark">
+            <small>Core Tools</small>
+            <p>Power BI, SQL, Python, Azure, AWS, Snowflake, SSIS, and warehouse concepts.</p>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="container stats-grid">
+      <div class="card"><h3>10+</h3><p>Dashboards built and maintained.</p></div>
+      <div class="card"><h3>50k+</h3><p>Rows analysed and cleaned.</p></div>
+      <div class="card"><h3>40%</h3><p>Faster reporting refresh performance.</p></div>
+      <div class="card"><h3>10+ hrs</h3><p>Saved monthly through automation.</p></div>
+    </div>
   </section>
 
-  <section class="section" id="highlights">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Highlights</div>
-        <h2 class="section-title">A stronger proof section that quickly shows what you bring.</h2>
+  <section id="about">
+    <div class="container two-col">
+      <div class="card">
+        <div class="eyebrow">About</div>
+        <h2 class="section-title">Analytical, technical, and business-focused.</h2>
         <p class="section-text">
-          This section is designed to make your profile easier to scan and more convincing for recruiters and hiring managers.
+          I’m a Data Analyst with experience in reporting, dashboard development, data validation, and ETL support. I work across SQL, Power BI, Python, Azure, AWS, and data warehouse environments to deliver clear and reliable business insight.
         </p>
       </div>
-
-      <div class="highlight-grid">
-        <div class="card-box reveal">
-          <h3>10+ Dashboards</h3>
-          <p>Built and maintained Power BI and reporting dashboards for business and operational teams.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>ETL & Data Pipelines</h3>
-          <p>Designed ETL pipelines using Azure Data Factory, SSIS, Python, and SQL.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Cloud & Warehousing</h3>
-          <p>Worked with Azure Data Lake, Snowflake, AWS, Cassandra, Redshift, and SQL Server environments.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Data Quality & Automation</h3>
-          <p>Improved reporting accuracy and reduced manual work using automation, profiling, and validation processes.</p>
+      <div class="card">
+        <div class="eyebrow">At a Glance</div>
+        <div class="list">
+          <div><strong>Current role:</strong> Data Analyst at Citi Bank</div>
+          <div><strong>Location:</strong> Stockton on Tees, UK</div>
+          <div><strong>Education:</strong> Master’s in Applied Data Science</div>
+          <div><strong>Positioning:</strong> Data Analyst with Data Engineering skills</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="experience">
+  <section id="experience">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Experience</div>
-        <h2 class="section-title">Work experience that positions you as both analytical and technically capable.</h2>
-        <p class="section-text">
-          This layout makes your employment history easier to navigate and much more professional on first view.
-        </p>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-meta">
+      <div class="eyebrow">Experience</div>
+      <h2 class="section-title">Relevant experience, kept concise.</h2>
+      <div class="experience-wrap">
+        <div class="job">
+          <div class="job-meta">
             <h3>Data Analyst</h3>
-            <p class="company">Citi Bank</p>
+            <div class="company">Citi Bank</div>
             <p>Sep 2023 – Present</p>
-            <p>Working remotely from UK</p>
+            <p>Remote, UK</p>
           </div>
-          <div class="timeline-content">
+          <div>
             <ul>
-              <li>Performed complex data analysis in support of ad-hoc and standing customer requests.</li>
-              <li>Designed and implemented ETL pipelines using Azure Data Factory, SSIS, Python, and SQL-based processes.</li>
-              <li>Worked with Snowflake, Cassandra, Azure SQL Data Warehouse, and Data Lake environments to support analytics and reporting.</li>
-              <li>Built and enhanced reporting outputs using Power BI, SQL Server, and Azure-based services.</li>
-              <li>Improved data quality, validation, reporting reliability, and stakeholder-facing insight delivery.</li>
-              <li>Contributed to data modelling, profiling, mapping, warehouse design support, and cloud data pipeline development.</li>
+              <li>Built and supported reporting solutions using Power BI, SQL Server, and Azure.</li>
+              <li>Worked with ETL pipelines, data validation, and warehouse-style environments.</li>
+              <li>Used Snowflake, Cassandra, Azure Data Lake, and SQL for analytics support.</li>
+              <li>Improved reporting quality, refresh performance, and stakeholder outputs.</li>
             </ul>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-meta">
+        <div class="job">
+          <div class="job-meta">
             <h3>Data Analyst</h3>
-            <p class="company">Cloud Centric</p>
+            <div class="company">Cloud Centric</div>
             <p>Feb 2022 – Aug 2023</p>
             <p>India</p>
           </div>
-          <div class="timeline-content">
+          <div>
             <ul>
-              <li>Worked on AWS cloud environments including S3, Redshift, Glue, and event-driven processing support.</li>
-              <li>Designed warehouse models using star schema and snowflake schema concepts.</li>
-              <li>Developed ETL processes using SQL, Python, SSIS, and data transformation logic.</li>
-              <li>Performed data modelling and profiling using Erwin and supported conceptual model design.</li>
-              <li>Created dashboards and reporting solutions using Tableau, Power BI, and SQL-based data sources.</li>
-              <li>Supported governance, dry runs, testing coordination, and reporting process improvement.</li>
+              <li>Worked with AWS services including S3, Redshift, Glue, SQL, and Python.</li>
+              <li>Supported ETL workflows, data modelling, and warehouse design concepts.</li>
+              <li>Created reporting outputs using Tableau, Power BI, and SQL sources.</li>
+              <li>Improved governance, testing coordination, and reporting processes.</li>
             </ul>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-meta">
+        <div class="job">
+          <div class="job-meta">
             <h3>Data Analyst</h3>
-            <p class="company">Zenoti</p>
+            <div class="company">Zenoti</div>
             <p>Dec 2020 – Jan 2022</p>
             <p>India</p>
           </div>
-          <div class="timeline-content">
+          <div>
             <ul>
-              <li>Worked across OLTP and Data Warehouse environments for analysis, design, and reporting support.</li>
-              <li>Designed data models using Erwin and supported schema design for warehouse-style implementations.</li>
-              <li>Built SQL procedures, ETL scripts, transformation logic, and reporting queries.</li>
-              <li>Worked with AWS S3, Redshift, Teradata, PL/SQL, and T-SQL for data handling and validation.</li>
-              <li>Collaborated with reporting teams to understand requirements and improve reporting quality.</li>
-              <li>Supported migration, data analysis, requirement gathering, validation, and offshore team coordination.</li>
+              <li>Worked across reporting, SQL analysis, ETL support, and data model design.</li>
+              <li>Used AWS S3, Redshift, Teradata, T-SQL, and PL/SQL for data handling.</li>
+              <li>Supported reporting teams with validation, migration, and requirements work.</li>
+              <li>Contributed to OLTP and Data Warehouse-related projects.</li>
             </ul>
           </div>
         </div>
@@ -1099,202 +518,86 @@
     </div>
   </section>
 
-  <section class="section" id="skills">
+  <section id="skills">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Skills</div>
-        <h2 class="section-title">A cleaner, more structured skills section for faster scanning.</h2>
-        <p class="section-text">
-          Instead of one long list, your technical capabilities are grouped into areas that employers understand quickly.
-        </p>
-      </div>
-
+      <div class="eyebrow">Skills</div>
+      <h2 class="section-title">Core tools and strengths.</h2>
       <div class="skills-grid">
-        <div class="card-box reveal">
-          <h3>Programming</h3>
-          <p>Python, SQL, PL/SQL, R, Shell scripting, AWK, and data analysis libraries such as Pandas, NumPy, and Matplotlib.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Data Engineering</h3>
-          <p>ETL, SSIS, Azure Data Factory, Data Lake, Data Warehousing, Snowflake, data pipelines, data profiling, and transformation logic.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Cloud Platforms</h3>
-          <p>Azure, AWS, Azure Data Lake, Blob Storage, Redshift, S3, Snowflake, Cassandra, and warehouse-style cloud environments.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>BI & Reporting</h3>
-          <p>Power BI, Tableau, QlikView, SSRS, Adobe Analytics, Advanced Excel, KPI reporting, stakeholder dashboards, and insights.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Databases</h3>
-          <p>SQL Server, Oracle, MySQL, Teradata, DB2, MongoDB, DynamoDB, Cassandra, MS Access, and related reporting systems.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Data Modelling</h3>
-          <p>Star schema, snowflake schema, dimensional thinking, conceptual modelling, data mapping, and warehouse support design.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Tools</h3>
-          <p>Erwin, Informatica, IBM DataStage, Anaconda, Jupyter Notebook, Git Bash, JIRA, SQL Developer, and SQL assistance tools.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Strengths</h3>
-          <p>Data quality, validation, business reporting, automation, dashboard maintenance, stakeholder communication, and process improvement.</p>
-        </div>
+        <div class="card"><h3>Data Analysis</h3><p>SQL, Python, Excel, validation, profiling, cleansing, and reporting support.</p></div>
+        <div class="card"><h3>BI & Reporting</h3><p>Power BI, Tableau, SSRS, QlikView, dashboards, KPI reporting, and stakeholder insight.</p></div>
+        <div class="card"><h3>Data Engineering</h3><p>ETL, SSIS, Azure Data Factory, pipelines, warehousing concepts, and transformation logic.</p></div>
+        <div class="card"><h3>Cloud & Databases</h3><p>Azure, AWS, Snowflake, Redshift, SQL Server, Oracle, MySQL, MongoDB, and Teradata.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="projects">
+  <section id="projects">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Projects</div>
-        <h2 class="section-title">Projects presented in a more professional and visual way.</h2>
-        <p class="section-text">
-          This section is designed so you can later add GitHub links, PDF case studies, screenshots, or demos without changing the layout.
-        </p>
-      </div>
-
-      <div class="project-grid">
-        <div class="project-card reveal">
+      <div class="eyebrow">Projects</div>
+      <h2 class="section-title">Short, relevant project highlights.</h2>
+      <div class="projects-grid">
+        <div class="card">
           <div class="project-visual"></div>
-          <h3>Fake News Detection using Machine Learning</h3>
-          <p>
-            Built an NLP-based classification model using Python, Scikit-learn, TF-IDF, and text preprocessing techniques. Performed feature engineering, model training, evaluation, and created a real-time prediction concept.
-          </p>
-          <div class="tags">
-            <span>Python</span>
-            <span>Scikit-learn</span>
-            <span>NLP</span>
-            <span>TF-IDF</span>
-          </div>
-          <div class="project-actions">
-            <a class="primary" href="#contact">Discuss Project</a>
-            <a href="#resume">Add report link later</a>
-          </div>
+          <h3>Fake News Detection</h3>
+          <p>Built an NLP classification model using Python, Scikit-learn, and TF-IDF.</p>
+          <div class="tags"><span>Python</span><span>NLP</span><span>ML</span></div>
         </div>
-
-        <div class="project-card reveal">
+        <div class="card">
           <div class="project-visual"></div>
           <h3>Stroke Prediction App</h3>
-          <p>
-            Built a Streamlit-based application using Python and predictive modelling for real-time stroke-risk prediction. Included preprocessing, imbalance handling, usability-focused form design, and model integration.
-          </p>
-          <div class="tags">
-            <span>Python</span>
-            <span>Streamlit</span>
-            <span>Prediction</span>
-            <span>Healthcare Data</span>
-          </div>
-          <div class="project-actions">
-            <a class="primary" href="#contact">Discuss Project</a>
-            <a href="#resume">Add demo link later</a>
-          </div>
+          <p>Developed a Streamlit app for real-time stroke-risk prediction.</p>
+          <div class="tags"><span>Python</span><span>Streamlit</span><span>Prediction</span></div>
         </div>
-
-        <div class="project-card reveal">
+        <div class="card">
           <div class="project-visual"></div>
-          <h3>Data Pipeline & Reporting Work</h3>
-          <p>
-            Worked on ETL pipelines, warehouse-support workflows, cloud data movement, reporting solutions, and dashboard development using SQL, Python, Azure, AWS, and Power BI across enterprise-style environments.
-          </p>
-          <div class="tags">
-            <span>Azure</span>
-            <span>AWS</span>
-            <span>ETL</span>
-            <span>Power BI</span>
-          </div>
-          <div class="project-actions">
-            <a class="primary" href="#experience">See Experience</a>
-            <a href="#contact">Discuss Work</a>
-          </div>
+          <h3>Data Pipeline & Reporting</h3>
+          <p>Worked on ETL, reporting, warehouse support, and dashboard development.</p>
+          <div class="tags"><span>ETL</span><span>Power BI</span><span>Azure</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="education">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Education</div>
-        <h2 class="section-title">Qualifications presented clearly and professionally.</h2>
+  <section id="resume">
+    <div class="container resume-grid">
+      <div class="card resume-main">
+        <div class="eyebrow" style="color:#93c5fd;">Resume</div>
+        <h2 class="section-title" style="font-size:2rem;">Data Analyst with Data Engineering skills.</h2>
+        <p>Open to Data Analyst, BI Analyst, Reporting Analyst, and data-focused technical roles.</p>
+        <div class="resume-actions">
+          <a class="solid" href="#">Download CV</a>
+          <a class="outline" href="https://linkedin.com/in/masood-baig-indikar" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
-
-      <div class="education-grid">
-        <div class="card-box reveal">
-          <h3>Master’s in Applied Data Science</h3>
-          <p><strong>University of Sunderland</strong></p>
-          <p>Focused on data science, machine learning, analytics, and applied project work.</p>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>Bachelor of Engineering in Computer Science</h3>
-          <p><strong>Visvesvaraya Technological University (VTU), Belagavi</strong></p>
-          <p>Strong foundation in computer science, systems, and technical problem solving.</p>
-        </div>
+      <div class="card">
+        <h3>Education</h3>
+        <p><strong>Master’s in Applied Data Science</strong><br>University of Sunderland</p>
+        <br>
+        <p><strong>Bachelor of Engineering in Computer Science</strong><br>VTU, Belagavi</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="resume">
-    <div class="container">
-      <div class="resume-grid">
-        <div class="card-box resume-primary reveal">
-          <div class="eyebrow" style="color:#93c5fd;">Resume & Profiles</div>
-          <h2 class="section-title" style="font-size:2rem;">Position yourself clearly for analyst and data-focused technical roles.</h2>
-          <p>
-            Experienced Data Analyst with Data Engineering skills across Azure, AWS, ETL, SQL, Power BI, data quality, reporting, and warehouse-style environments. Open to Data Analyst, BI Analyst, Reporting Analyst, and technically aligned data roles.
-          </p>
-          <div class="resume-actions">
-            <a class="solid" href="#">Download CV</a>
-            <a class="outline" href="https://linkedin.com/in/masood-baig-indikar" target="_blank" rel="noopener">Open LinkedIn</a>
-          </div>
-        </div>
-
-        <div class="card-box reveal">
-          <h3>How to make this even stronger</h3>
-          <p>
-            Upload your CV as a PDF to the same GitHub repository and connect the button above to that file. You can also add GitHub links, dashboard screenshots, project PDFs, or case-study pages here later.
-          </p>
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-box">
+        <div class="eyebrow" style="color:#93c5fd;">Contact</div>
+        <h2 class="section-title" style="margin-bottom:10px;">Let’s connect.</h2>
+        <p>I’m open to analyst, BI, reporting, and data-focused opportunities.</p>
+        <div class="contact-list">
+          <a href="mailto:masood7572@gmail.com">masood7572@gmail.com</a>
+          <a href="tel:+447572952121">+44 7572952121</a>
+          <a href="https://linkedin.com/in/masood-baig-indikar" target="_blank" rel="noopener">linkedin.com/in/masood-baig-indikar</a>
+          <div>Stockton on Tees, UK</div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-box reveal">
-          <div class="eyebrow" style="color:#93c5fd;">Contact</div>
-          <h2 class="section-title" style="margin-bottom:10px;">Let’s connect about analyst, BI, reporting, or data-focused opportunities.</h2>
-          <p>
-            I’m open to conversations about roles where strong reporting, SQL, Power BI, cloud data work, and data engineering support are valued.
-          </p>
-
-          <div class="contact-list">
-            <a href="mailto:masood7572@gmail.com">masood7572@gmail.com</a>
-            <a href="tel:+447572952121">+44 7572952121</a>
-            <a href="https://linkedin.com/in/masood-baig-indikar" target="_blank" rel="noopener">linkedin.com/in/masood-baig-indikar</a>
-            <div>Stockton on Tees, UK</div>
-          </div>
-        </div>
-
-        <form class="contact-form reveal" onsubmit="sendMail(event)">
-          <input type="text" id="name" placeholder="Your Name" required />
-          <input type="email" id="email" placeholder="Your Email Address" required />
-          <textarea id="message" placeholder="Tell me about the role, project, or opportunity" required></textarea>
-          <button type="submit">Send Message</button>
-          <div class="contact-note">This opens your email app with the message pre-filled.</div>
-        </form>
-      </div>
+      <form class="contact-form" onsubmit="sendMail(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email Address" required />
+        <textarea id="message" placeholder="Tell me about the role or opportunity" required></textarea>
+        <button type="submit">Send Message</button>
+        <div class="note">This opens your email app with the message filled in.</div>
+      </form>
     </div>
   </section>
 
@@ -1305,76 +608,30 @@
   <script>
     function sendMail(event) {
       event.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      const subject = encodeURIComponent("Portfolio enquiry from " + name);
-      const body = encodeURIComponent(
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n\n" +
-        "Message:\n" + message
-      );
-
-      window.location.href =
-        "mailto:masood7572@gmail.com?subject=" + subject + "&body=" + body;
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Portfolio enquiry from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+      window.location.href = 'mailto:masood7572@gmail.com?subject=' + subject + '&body=' + body;
     }
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navMenu = document.getElementById("navMenu");
-    const navLinks = document.querySelectorAll(".nav-links a");
-
-    menuBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-      });
-    });
-
-    const sections = document.querySelectorAll("section[id]");
-    const allNavLinks = document.querySelectorAll(".nav-links a");
-
-    function setActiveLink() {
-      let current = "";
-      const scrollPos = window.scrollY + 120;
-
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a');
+    function setActive() {
+      let current = '';
+      const pos = window.scrollY + 120;
       sections.forEach(section => {
         const top = section.offsetTop;
         const height = section.offsetHeight;
-        if (scrollPos >= top && scrollPos < top + height) {
-          current = section.getAttribute("id");
-        }
+        if (pos >= top && pos < top + height) current = section.id;
       });
-
-      allNavLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
+      links.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
       });
     }
-
-    window.addEventListener("scroll", setActiveLink);
-    setActiveLink();
-
-    const reveals = document.querySelectorAll(".reveal");
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    reveals.forEach(el => {
-      if (!el.classList.contains("show")) {
-        revealObserver.observe(el);
-      }
-    });
+    window.addEventListener('scroll', setActive);
+    setActive();
   </script>
 </body>
 </html>
