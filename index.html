@@ -7,84 +7,101 @@
   <meta name="description" content="Masood BAI - Data Analyst with data engineering skills in SQL, Power BI, Python, Azure, AWS, and ETL." />
   <style>
     :root {
-      --bg: #0b1220;
-      --bg2: #132238;
-      --surface: #ffffff;
-      --soft: #f8fafc;
+      --navy: #0b1220;
+      --navy-2: #132238;
+      --blue: #2563eb;
+      --blue-2: #1d4ed8;
+      --gold: #f59e0b;
+      --bg: #f8fafc;
+      --white: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
       --line: #e2e8f0;
-      --brand: #2563eb;
-      --accent: #f59e0b;
-      --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
       --radius: 22px;
       --max: 1140px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background: linear-gradient(180deg, #f8fafc 0%, #eef4fb 100%);
       line-height: 1.6;
     }
-    a { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
     .container { width: min(var(--max), 92%); margin: 0 auto; }
-    section { padding: 80px 0; scroll-margin-top: 90px; }
+    section { padding: 84px 0; scroll-margin-top: 88px; }
+
     .eyebrow {
-      color: var(--brand);
+      color: var(--blue);
       text-transform: uppercase;
-      letter-spacing: .18em;
-      font-size: .78rem;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
       font-weight: 800;
       margin-bottom: 10px;
     }
     .section-title {
-      font-size: clamp(2rem, 3.2vw, 2.9rem);
-      line-height: 1.15;
-      margin-bottom: 12px;
+      font-size: clamp(2rem, 3.3vw, 3rem);
+      line-height: 1.12;
+      margin-bottom: 14px;
     }
-    .section-text { color: var(--muted); max-width: 680px; }
+    .section-text {
+      max-width: 700px;
+      color: var(--muted);
+    }
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(11,18,32,.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(11, 18, 32, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .nav {
       min-height: 74px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
     }
-    .brand strong { color: white; display: block; letter-spacing: .08em; }
+    .brand strong {
+      display: block;
+      color: white;
+      letter-spacing: 0.08em;
+      font-size: 1.05rem;
+    }
     .brand span {
-      color: #b9c7d9;
-      font-size: .75rem;
+      color: #b7c5d8;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: .18em;
+      letter-spacing: 0.18em;
     }
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
     }
     .nav-links a {
       color: #dbe5f2;
-      font-size: .92rem;
+      font-size: 0.93rem;
       font-weight: 700;
       padding: 8px 10px;
       border-radius: 999px;
+      transition: 0.2s ease;
     }
-    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,.1); color: white; }
-    .nav-cta {
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+    .nav-btn {
       background: white;
-      color: var(--bg);
+      color: var(--navy);
       padding: 10px 16px;
       border-radius: 999px;
       font-weight: 800;
@@ -92,7 +109,9 @@
     }
 
     .hero {
-      background: radial-gradient(circle at top left, rgba(37,99,235,.22), transparent 26%), linear-gradient(135deg, #08101e 0%, #101b31 55%, #183056 100%);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.22), transparent 26%),
+        linear-gradient(135deg, #08101e 0%, #101b31 58%, #183056 100%);
       color: white;
       position: relative;
       overflow: hidden;
@@ -101,44 +120,45 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
-      background-size: 26px 26px;
-      opacity: .25;
+      background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.22;
       pointer-events: none;
     }
     .hero-inner {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1.2fr .9fr;
-      gap: 32px;
+      grid-template-columns: 1.2fr 0.85fr;
+      gap: 34px;
       align-items: center;
-      padding: 88px 0 64px;
+      padding: 92px 0 66px;
     }
     .pill {
       display: inline-block;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
       text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: .74rem;
+      letter-spacing: 0.16em;
+      font-size: 0.74rem;
       font-weight: 800;
       margin-bottom: 18px;
     }
     .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4.7rem);
-      line-height: 1.05;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 1.03;
+      max-width: 760px;
       margin-bottom: 14px;
-      max-width: 720px;
     }
     .hero p {
       color: #d8e4f3;
-      max-width: 660px;
-      font-size: 1.02rem;
+      max-width: 680px;
+      font-size: 1.03rem;
     }
-    .hero-actions, .hero-links {
+    .hero-actions,
+    .hero-links {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
@@ -154,24 +174,29 @@
       font-weight: 800;
       min-width: 145px;
     }
-    .btn-primary { background: white; color: var(--bg); }
-    .btn-secondary { color: white; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
+    .btn-primary { background: white; color: var(--navy); }
+    .btn-secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+    }
     .chip {
       padding: 9px 13px;
       border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      font-size: .9rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.9rem;
       font-weight: 700;
     }
+
     .hero-card {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 28px;
-      padding: 20px;
-      box-shadow: 0 20px 50px rgba(0,0,0,.18);
+      padding: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
     }
-    .hero-stats {
+    .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
@@ -182,52 +207,70 @@
       border-radius: 20px;
       padding: 22px;
     }
-    .mini.dark { background: linear-gradient(135deg, #0f172a, #172554); color: white; grid-column: span 2; }
+    .mini.dark {
+      background: linear-gradient(135deg, #0f172a, #172554);
+      color: white;
+      grid-column: span 2;
+    }
     .mini small {
       display: block;
-      font-size: .72rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: .16em;
+      letter-spacing: 0.16em;
       font-weight: 800;
       margin-bottom: 8px;
-      color: var(--brand);
+      color: var(--blue);
     }
     .mini.dark small { color: #93c5fd; }
-    .mini strong { display: block; font-size: 1.9rem; line-height: 1; margin-bottom: 8px; }
-    .stats-grid, .skills-grid, .projects-grid, .edu-grid {
-      display: grid;
-      gap: 18px;
+    .mini strong {
+      display: block;
+      font-size: 1.85rem;
+      line-height: 1;
+      margin-bottom: 8px;
     }
-    .stats-grid { grid-template-columns: repeat(4, 1fr); margin-top: 28px; }
-    .skills-grid { grid-template-columns: repeat(4, 1fr); }
-    .projects-grid { grid-template-columns: repeat(3, 1fr); }
-    .edu-grid { grid-template-columns: repeat(2, 1fr); }
-    .card {
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .card,
+    .project-card,
+    .job,
+    .contact-box,
+    .contact-form {
       background: white;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 24px;
       box-shadow: var(--shadow);
+    }
+    .card {
+      padding: 24px;
       height: 100%;
     }
     .card h3 { font-size: 1.08rem; margin-bottom: 8px; }
     .card p { color: var(--muted); }
-    .two-col {
+
+    .split {
       display: grid;
-      grid-template-columns: 1.15fr .95fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 22px;
     }
-    .list { display: grid; gap: 12px; margin-top: 16px; }
-    .list div { color: var(--muted); }
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+      color: var(--muted);
+    }
     .list strong { color: var(--text); }
 
-    .experience-wrap { display: grid; gap: 18px; }
+    .experience-wrap {
+      display: grid;
+      gap: 18px;
+    }
     .job {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 24px;
       padding: 24px;
-      box-shadow: var(--shadow);
       display: grid;
       grid-template-columns: 220px 1fr;
       gap: 22px;
@@ -236,28 +279,42 @@
       border-right: 1px solid var(--line);
       padding-right: 16px;
     }
-    .job-meta h3 { font-size: 1.05rem; margin-bottom: 4px; }
-    .job-meta .company { color: var(--brand); font-weight: 800; }
-    .job-meta p { color: var(--muted); font-size: .94rem; }
+    .job-meta h3 { font-size: 1.04rem; margin-bottom: 4px; }
+    .job-meta .company { color: var(--blue); font-weight: 800; }
+    .job-meta p { color: var(--muted); font-size: 0.94rem; }
     .job ul { padding-left: 18px; color: var(--muted); }
     .job li + li { margin-top: 7px; }
 
+    .skills-grid,
+    .projects-grid,
+    .resume-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .skills-grid { grid-template-columns: repeat(4, 1fr); }
+    .projects-grid { grid-template-columns: repeat(3, 1fr); }
+    .resume-grid { grid-template-columns: 1.1fr 0.9fr; }
+
+    .project-card { padding: 18px; }
     .project-visual {
-      height: 150px;
+      height: 160px;
       border-radius: 16px;
       margin-bottom: 16px;
-      background: linear-gradient(135deg, rgba(37,99,235,.98), rgba(15,23,42,.98));
+      background: linear-gradient(135deg, rgba(37,99,235,0.98), rgba(15,23,42,0.98));
       position: relative;
       overflow: hidden;
     }
-    .project-visual::before, .project-visual::after {
+    .project-visual::before,
+    .project-visual::after {
       content: "";
       position: absolute;
       border-radius: 12px;
-      background: rgba(255,255,255,.14);
+      background: rgba(255,255,255,0.14);
     }
-    .project-visual::before { inset: 16px 16px 58px; border: 1px solid rgba(255,255,255,.18); }
+    .project-visual::before { inset: 16px 16px 60px; border: 1px solid rgba(255,255,255,0.18); }
     .project-visual::after { left: 16px; right: 84px; bottom: 16px; height: 28px; }
+    .project-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
+    .project-card p { color: var(--muted); }
     .tags {
       display: flex;
       gap: 8px;
@@ -266,18 +323,13 @@
     }
     .tags span {
       background: #eef4ff;
-      color: var(--brand);
+      color: var(--blue);
       padding: 6px 10px;
       border-radius: 999px;
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: 700;
     }
 
-    .resume-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-    }
     .resume-main {
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: white;
@@ -295,22 +347,27 @@
       border-radius: 14px;
       font-weight: 800;
     }
-    .resume-actions .solid { background: white; color: var(--bg); }
-    .resume-actions .outline { color: white; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
+    .resume-actions .solid { background: white; color: var(--navy); }
+    .resume-actions .outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+    }
 
     .contact {
-      background: linear-gradient(135deg, #08101e 0%, #111d34 55%, #183056 100%);
+      background: linear-gradient(135deg, #08101e 0%, #111d34 58%, #183056 100%);
       color: white;
     }
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr .95fr;
+      grid-template-columns: 1fr 0.95fr;
       gap: 20px;
     }
-    .contact-box, .contact-form {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 26px;
+    .contact-box,
+    .contact-form {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: white;
       padding: 26px;
     }
     .contact-box p { color: #d8e4f3; }
@@ -319,57 +376,81 @@
       gap: 12px;
       margin-top: 18px;
     }
-    .contact-list a, .contact-list div {
+    .contact-list a,
+    .contact-list div {
       padding: 13px 15px;
       border-radius: 14px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
       color: white;
     }
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
       padding: 13px 15px;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.08);
       color: white;
       margin-bottom: 12px;
       font-size: 1rem;
     }
-    .contact-form input::placeholder, .contact-form textarea::placeholder { color: #d8e4f3; }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: #d8e4f3; }
     .contact-form textarea { min-height: 140px; resize: vertical; }
     .contact-form button {
       width: 100%;
       border: none;
       background: white;
-      color: var(--bg);
+      color: var(--navy);
       padding: 13px 16px;
       border-radius: 14px;
       font-weight: 800;
       cursor: pointer;
     }
-    .note { color: #d8e4f3; font-size: .9rem; margin-top: 10px; }
-    footer { background: #030712; color: #9fb0c5; text-align: center; padding: 20px 0; font-size: .92rem; }
+    .note { color: #d8e4f3; font-size: 0.9rem; margin-top: 10px; }
+    footer {
+      background: #030712;
+      color: #9fb0c5;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.92rem;
+    }
 
     @media (max-width: 1080px) {
-      .hero-inner, .two-col, .resume-grid, .contact-grid { grid-template-columns: 1fr; }
-      .stats-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-inner,
+      .split,
+      .resume-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+      .metrics,
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 860px) {
       .nav { flex-wrap: wrap; padding: 14px 0; }
       .nav-links { width: 100%; }
       .job { grid-template-columns: 1fr; }
-      .job-meta { border-right: none; border-bottom: 1px solid var(--line); padding-right: 0; padding-bottom: 12px; }
-      .edu-grid { grid-template-columns: 1fr; }
+      .job-meta {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding-right: 0;
+        padding-bottom: 12px;
+      }
     }
     @media (max-width: 640px) {
       section { padding: 68px 0; }
-      .hero-inner { padding: 72px 0 58px; }
-      .hero-stats, .stats-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .hero-inner { padding: 74px 0 58px; }
+      .hero-grid,
+      .metrics,
+      .skills-grid,
+      .projects-grid { grid-template-columns: 1fr; }
       .mini.dark { grid-column: span 1; }
-      .hero-actions, .hero-links, .resume-actions { flex-direction: column; }
-      .btn, .resume-actions a, .nav-cta { width: 100%; justify-content: center; }
+      .hero-actions,
+      .hero-links,
+      .resume-actions { flex-direction: column; }
+      .btn,
+      .resume-actions a,
+      .nav-btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -387,7 +468,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Contact</a>
+      <a href="#contact" class="nav-btn">Contact</a>
     </div>
   </header>
 
@@ -411,26 +492,26 @@
       </div>
 
       <div class="hero-card">
-        <div class="hero-stats">
+        <div class="hero-grid">
           <div class="mini">
             <small>Experience</small>
             <strong>5+ Years</strong>
-            <p>Analytics, BI, reporting, and data workflow support.</p>
+            <p>Analytics, BI, ETL, and reporting support.</p>
           </div>
           <div class="mini">
             <small>Focus</small>
             <strong>BI + ETL</strong>
-            <p>Dashboards, validation, data pipelines, and reporting.</p>
+            <p>Dashboards, validation, pipelines, and warehouse support.</p>
           </div>
           <div class="mini dark">
             <small>Core Tools</small>
-            <p>Power BI, SQL, Python, Azure, AWS, Snowflake, SSIS, and warehouse concepts.</p>
+            <p>Power BI, SQL, Python, Azure, AWS, Snowflake, SSIS, and data warehouse concepts.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container stats-grid">
+    <div class="container metrics">
       <div class="card"><h3>10+</h3><p>Dashboards built and maintained.</p></div>
       <div class="card"><h3>50k+</h3><p>Rows analysed and cleaned.</p></div>
       <div class="card"><h3>40%</h3><p>Faster reporting refresh performance.</p></div>
@@ -439,16 +520,16 @@
   </section>
 
   <section id="about">
-    <div class="container two-col">
+    <div class="container split">
       <div class="card">
         <div class="eyebrow">About</div>
-        <h2 class="section-title">Analytical, technical, and business-focused.</h2>
+        <h2 class="section-title">Professional, clear, and recruiter-friendly.</h2>
         <p class="section-text">
-          I’m a Data Analyst with experience in reporting, dashboard development, data validation, and ETL support. I work across SQL, Power BI, Python, Azure, AWS, and data warehouse environments to deliver clear and reliable business insight.
+          I’m a Data Analyst with experience in reporting, dashboard development, data validation, and ETL support. I work across SQL, Power BI, Python, Azure, AWS, and data warehouse environments to deliver accurate and useful business insight.
         </p>
       </div>
       <div class="card">
-        <div class="eyebrow">At a Glance</div>
+        <div class="eyebrow">Profile</div>
         <div class="list">
           <div><strong>Current role:</strong> Data Analyst at Citi Bank</div>
           <div><strong>Location:</strong> Stockton on Tees, UK</div>
@@ -462,7 +543,7 @@
   <section id="experience">
     <div class="container">
       <div class="eyebrow">Experience</div>
-      <h2 class="section-title">Relevant experience, kept concise.</h2>
+      <h2 class="section-title">Relevant experience with cleaner presentation.</h2>
       <div class="experience-wrap">
         <div class="job">
           <div class="job-meta">
@@ -521,11 +602,11 @@
   <section id="skills">
     <div class="container">
       <div class="eyebrow">Skills</div>
-      <h2 class="section-title">Core tools and strengths.</h2>
+      <h2 class="section-title">Strong layout, shorter content, better scanability.</h2>
       <div class="skills-grid">
-        <div class="card"><h3>Data Analysis</h3><p>SQL, Python, Excel, validation, profiling, cleansing, and reporting support.</p></div>
-        <div class="card"><h3>BI & Reporting</h3><p>Power BI, Tableau, SSRS, QlikView, dashboards, KPI reporting, and stakeholder insight.</p></div>
-        <div class="card"><h3>Data Engineering</h3><p>ETL, SSIS, Azure Data Factory, pipelines, warehousing concepts, and transformation logic.</p></div>
+        <div class="card"><h3>Data Analysis</h3><p>SQL, Python, Excel, profiling, validation, cleansing, and reporting support.</p></div>
+        <div class="card"><h3>BI & Reporting</h3><p>Power BI, Tableau, SSRS, QlikView, dashboards, KPIs, and stakeholder insight.</p></div>
+        <div class="card"><h3>Data Engineering</h3><p>ETL, SSIS, Azure Data Factory, pipelines, warehousing concepts, and transformations.</p></div>
         <div class="card"><h3>Cloud & Databases</h3><p>Azure, AWS, Snowflake, Redshift, SQL Server, Oracle, MySQL, MongoDB, and Teradata.</p></div>
       </div>
     </div>
@@ -534,21 +615,21 @@
   <section id="projects">
     <div class="container">
       <div class="eyebrow">Projects</div>
-      <h2 class="section-title">Short, relevant project highlights.</h2>
+      <h2 class="section-title">Structured like a stronger portfolio site, but cleaner.</h2>
       <div class="projects-grid">
-        <div class="card">
+        <div class="project-card">
           <div class="project-visual"></div>
           <h3>Fake News Detection</h3>
           <p>Built an NLP classification model using Python, Scikit-learn, and TF-IDF.</p>
           <div class="tags"><span>Python</span><span>NLP</span><span>ML</span></div>
         </div>
-        <div class="card">
+        <div class="project-card">
           <div class="project-visual"></div>
           <h3>Stroke Prediction App</h3>
           <p>Developed a Streamlit app for real-time stroke-risk prediction.</p>
           <div class="tags"><span>Python</span><span>Streamlit</span><span>Prediction</span></div>
         </div>
-        <div class="card">
+        <div class="project-card">
           <div class="project-visual"></div>
           <h3>Data Pipeline & Reporting</h3>
           <p>Worked on ETL, reporting, warehouse support, and dashboard development.</p>
@@ -570,7 +651,7 @@
         </div>
       </div>
       <div class="card">
-        <h3>Education</h3>
+        <div class="eyebrow">Education</div>
         <p><strong>Master’s in Applied Data Science</strong><br>University of Sunderland</p>
         <br>
         <p><strong>Bachelor of Engineering in Computer Science</strong><br>VTU, Belagavi</p>
