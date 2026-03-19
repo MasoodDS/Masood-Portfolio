@@ -1,729 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masood BAI | Portfolio</title>
-  <meta name="description" content="Masood BAI portfolio - Data Analyst with reporting, BI, ETL, and cloud data skills." />
-  <style>
-    :root {
-      --page-bg: #e9eaec;
-      --white: #ffffff;
-      --text: #17191d;
-      --muted: #5f6670;
-      --line: rgba(255,255,255,0.35);
-      --dark: #0f1013;
-      --slate: #7c8da0;
-      --slate-dark: #6f8092;
-      --shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
-      --max: 1180px;
-      --radius: 22px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masood BAI | Portfolio</title>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--page-bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: min(var(--max), 92%); margin: 0 auto; }
-    section { padding: 0; }
+<style>
 
-    .hero-banner {
-      min-height: 390px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(rgba(6, 11, 24, 0.30), rgba(6, 11, 24, 0.30)),
-        radial-gradient(circle at 50% -10%, rgba(92,129,179,0.65), transparent 38%),
-        linear-gradient(180deg, #07111f 0%, #0a1830 45%, #0d223f 100%);
-      border-top: 4px solid #19b8bf;
-    }
-    .hero-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.45) 0 1px, transparent 2px),
-        radial-gradient(circle at 75% 28%, rgba(255,255,255,0.35) 0 1px, transparent 2px),
-        radial-gradient(circle at 88% 16%, rgba(255,255,255,0.25) 0 1px, transparent 2px),
-        radial-gradient(circle at 56% 10%, rgba(255,255,255,0.25) 0 1px, transparent 2px),
-        radial-gradient(circle at 44% 32%, rgba(255,255,255,0.25) 0 1px, transparent 2px);
-      background-size: 180px 180px, 220px 220px, 260px 260px, 320px 320px, 420px 420px;
-      opacity: .9;
-      pointer-events: none;
-    }
-    .hero-banner::after {
-      content: "";
-      position: absolute;
-      left: -8%;
-      right: -8%;
-      bottom: -160px;
-      height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(ellipse at center, rgba(124, 153, 198, 0.9) 0%, rgba(84,116,164,0.45) 35%, rgba(14,31,59,0.0) 72%);
-      transform: scaleX(1.35);
-      opacity: .95;
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: min(var(--max), 92%);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      padding: 0 10px;
-    }
-    .hero-title {
-      color: white;
-      font-weight: 800;
-      font-size: clamp(2.1rem, 4vw, 4.3rem);
-      letter-spacing: 0.01em;
-      line-height: 1.05;
-      text-transform: uppercase;
-      max-width: 860px;
-      text-align: left;
-    }
-    .hero-cta {
-      background: var(--slate);
-      color: white;
-      min-width: 170px;
-      padding: 22px 28px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-weight: 800;
-      font-size: 0.92rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: transform .22s ease, background .22s ease;
-    }
-    .hero-cta:hover { transform: translateY(-2px); background: var(--slate-dark); }
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#e9eaec;
+color:#111;
+}
 
-    .intro-section {
-      background: #ebebec;
-      padding: 58px 0 46px;
-    }
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 1fr;
-      align-items: center;
-      gap: 56px;
-    }
-    .portrait-wrap {
-      display: flex;
-      justify-content: center;
-    }
-    .portrait {
-      width: min(560px, 88vw);
-      aspect-ratio: 1/1;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 25%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
-      background: #d9d9d9;
-    }
-    .intro-copy {
-      text-align: center;
-      padding-right: 18px;
-    }
-    .intro-copy h2 {
-      font-size: clamp(2.2rem, 4vw, 4rem);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-    }
-    .intro-copy p {
-      color: #525862;
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
-      line-height: 1.7;
-      max-width: 640px;
-      margin: 0 auto 28px;
-    }
-    .resume-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 170px;
-      padding: 18px 30px;
-      border-radius: 999px;
-      background: var(--slate);
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-weight: 800;
-      box-shadow: var(--shadow);
-    }
+section{
+padding:60px 0;
+}
 
-    .dark-section {
-      background: #0f1013;
-      color: white;
-      padding: 56px 0 56px;
-    }
-    .section-shell {
-      width: min(var(--max), 92%);
-      margin: 0 auto;
-    }
-    .section-heading,
-    .light-heading {
-      font-size: clamp(2.2rem, 3.5vw, 4rem);
-      line-height: 1.05;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-    }
-    .divider,
-    .light-divider {
-      height: 1px;
-      background: rgba(255,255,255,0.38);
-      margin-bottom: 34px;
-    }
-    .light-divider { background: rgba(20,20,20,0.25); }
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+}
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 46px;
-    }
-    .about-col {
-      text-align: left;
-    }
-    .about-circle {
-      width: min(360px, 100%);
-      aspect-ratio: 1/1;
-      border-radius: 50%;
-      margin: 0 auto 24px;
-      overflow: hidden;
-      position: relative;
-      background: #d0d5da;
-    }
-    .about-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .img-edu {
-      background:
-        linear-gradient(rgba(110,140,190,.22), rgba(110,140,190,.22)),
-        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80') center/cover;
-    }
-    .img-exp {
-      background:
-        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)),
-        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80') center/cover;
-    }
-    .img-skill {
-      background:
-        linear-gradient(rgba(15,20,26,.18), rgba(15,20,26,.18)),
-        url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80') center/cover;
-    }
-    .about-title {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 18px;
-      color: #f3f4f6;
-    }
-    .about-list {
-      color: #a9adb3;
-      font-size: 0.98rem;
-      line-height: 1.7;
-      padding-left: 24px;
-    }
-    .about-list li { margin-bottom: 10px; }
-    .about-list strong { color: #d8dde6; }
+h1,h2,h3{
+margin:0 0 15px 0;
+}
 
-    .project-band {
-      background: #8192a5;
-      color: white;
-      padding: 58px 0 50px;
-    }
-    .project-sub {
-      text-align: center;
-      font-style: italic;
-      font-size: 1.02rem;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 34px;
-    }
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 34px;
-    }
-    .project-card {
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(92, 108, 127, 0.18);
-      padding: 34px 24px 26px;
-      text-align: center;
-      min-height: 168px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .project-card h3 {
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 26px;
-    }
-    .soft-btn {
-      align-self: center;
-      background: #f5f2ee;
-      color: #2e3137;
-      min-width: 146px;
-      padding: 15px 24px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-weight: 800;
-      font-size: 0.88rem;
-    }
+.hero{
+background:linear-gradient(180deg,#07111f,#0d223f);
+color:white;
+padding:80px 0;
+text-align:center;
+}
 
-    .sample-section {
-      background: #ebebec;
-      padding: 48px 0 40px;
-    }
-    .sample-carousel {
-      position: relative;
-      overflow: hidden;
-    }
-    .sample-track {
-      display: flex;
-      transition: transform .45s ease;
-    }
-    .sample-slide {
-      min-width: 100%;
-      background: #d9dde2;
-    }
-    .sample-slide img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      align-items: center;
-      margin-top: 18px;
-      color: #69768a;
-      font-size: 0.95rem;
-    }
-    .carousel-btn {
-      border: none;
-      background: transparent;
-      color: #69768a;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+.hero h1{
+font-size:40px;
+}
 
-    .github-band {
-      background: #0f1013;
-      color: white;
-      padding: 54px 0 48px;
-    }
-    .github-title {
-      font-size: clamp(2rem, 3vw, 3rem);
-      margin-bottom: 28px;
-      text-align: left;
-      font-weight: 500;
-    }
-    .wide-pill {
-      display: inline-flex;
-      width: min(760px, 100%);
-      justify-content: center;
-      padding: 18px 26px;
-      border-radius: 999px;
-      background: var(--slate);
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-weight: 800;
-      font-size: 0.92rem;
-    }
+.intro{
+background:#f0f0f0;
+text-align:center;
+}
 
-    .resume-band {
-      background: #8192a5;
-      color: white;
-      padding: 50px 0 44px;
-    }
-    .resume-row {
-      background: rgba(95, 107, 123, 0.42);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      padding: 18px 24px;
-      margin-top: 10px;
-    }
-    .resume-row span { font-size: 1.02rem; }
-    .resume-download {
-      color: white;
-      font-size: 0.98rem;
-      white-space: nowrap;
-    }
+.portrait{
+width:320px;
+height:320px;
+border-radius:50%;
+object-fit:cover;
+display:block;
+margin:auto;
+}
 
-    .skills-band {
-      background: #0f1013;
-      color: white;
-      padding: 42px 0 60px;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 56px;
-    }
-    .skill-box h3 {
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-    .skill-box p {
-      color: #b3b7bd;
-      font-size: 0.99rem;
-      line-height: 1.7;
-    }
+.dark{
+background:#0f1013;
+color:white;
+}
 
-    .contact-hero {
-      position: relative;
-      min-height: 880px;
-      background:
-        linear-gradient(rgba(10,10,10,0.42), rgba(10,10,10,0.42)),
-        url('photo.jpg') center 20% / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 70px 0;
-    }
-    .contact-shell {
-      width: min(var(--max), 92%);
-      text-align: center;
-      color: white;
-    }
-    .contact-shell .section-heading { margin-bottom: 28px; }
-    .contact-card {
-      width: min(820px, 100%);
-      margin: 0 auto;
-      background: rgba(255,255,255,0.94);
-      color: #17191d;
-      padding: 56px 42px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-    }
-    .contact-card h3 {
-      font-size: clamp(1.8rem, 3vw, 3rem);
-      font-weight: 500;
-      margin-bottom: 22px;
-    }
-    .contact-card p {
-      color: #5d636d;
-      font-size: 1.02rem;
-      line-height: 1.7;
-      max-width: 620px;
-      margin: 0 auto 30px;
-    }
-    .contact-location {
-      font-size: clamp(1.8rem, 3vw, 3.2rem);
-      font-weight: 500;
-      margin-bottom: 16px;
-      color: #20232a;
-    }
-    .contact-email {
-      color: #7b8ea5;
-      font-size: 1.05rem;
-      margin-bottom: 34px;
-      display: inline-block;
-    }
-    .contact-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 220px;
-      padding: 18px 30px;
-      background: var(--slate);
-      color: white;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-weight: 800;
-    }
+.about-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+}
 
-    .social-strip {
-      background: #f4f4f4;
-      padding: 44px 0 54px;
-      text-align: center;
-    }
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 42px;
-      margin-bottom: 8px;
-    }
-    .social {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-    .fb { background: #2f74da; }
-    .ig { background: #e64980; }
-    .li { background: #2f74ba; }
+.circle{
+width:260px;
+height:260px;
+border-radius:50%;
+margin:auto;
+background-size:cover;
+background-position:center;
+}
 
-    .footer-band {
-      background: #8192a5;
-      color: white;
-      text-align: center;
-      padding: 72px 20px 90px;
-      font-size: 0.98rem;
-    }
-    .footer-band p { margin-bottom: 30px; }
-    .footer-band .privacy {
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 42px;
-    }
-    .footer-line {
-      width: 60px;
-      height: 1px;
-      background: rgba(255,255,255,0.36);
-      margin: 0 auto 32px;
-    }
+/* EDUCATION IMAGE */
+.edu{
+background:
+linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80");
+}
 
-    @media (max-width: 1100px) {
-      .hero-inner,
-      .intro-grid,
-      .about-grid,
-      .project-grid,
-      .skills-grid,
-      .contact-card {
-        width: 100%;
-      }
-      .intro-grid,
-      .about-grid,
-      .project-grid,
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-title { text-align: center; }
-      .intro-copy { padding-right: 0; }
-      .about-circle { max-width: 320px; }
-    }
+/* EXPERIENCE IMAGE */
+.exp{
+background:
+linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80");
+}
 
-    @media (max-width: 760px) {
-      .hero-banner { min-height: 300px; }
-      .hero-cta,
-      .resume-pill,
-      .soft-btn,
-      .wide-pill,
-      .contact-pill { width: 100%; }
-      .project-card { min-height: auto; }
-      .resume-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .socials { gap: 24px; }
-      .contact-card { padding: 40px 22px; }
-      .contact-hero { min-height: 760px; }
-    }
-  </style>
+/* SKILLS IMAGE */
+.skill{
+background:
+linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80");
+}
+
+ul{
+color:#ccc;
+}
+
+.projects{
+background:#8192a5;
+color:white;
+text-align:center;
+}
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.2);
+padding:20px;
+}
+
+.contact{
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+color:white;
+text-align:center;
+padding:120px 0;
+}
+
+.footer{
+background:#8192a5;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+@media(max-width:900px){
+.about-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+.project-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
 </head>
+
 <body>
-  <section class="hero-banner" id="home">
-    <div class="hero-inner">
-      <h1 class="hero-title">Welcome to Masood BAI's Portfolio</h1>
-      <a class="hero-cta" href="#projects">My Work</a>
-    </div>
-  </section>
 
-  <section class="intro-section">
-    <div class="container intro-grid">
-      <div class="portrait-wrap">
-        <img class="portrait" src="photo.jpg" alt="Masood BAI portrait" />
-      </div>
-      <div class="intro-copy">
-        <h2>Masood BAI</h2>
-        <p>
-          Leveraging 5+ years of experience in data analysis, reporting, BI, and cloud data workflows, with a Master’s in Applied Data Science from the University of Sunderland to deliver practical and impactful business insight.
-        </p>
-        <a class="resume-pill" href="#resume">Resume</a>
-      </div>
-    </div>
-  </section>
+<section class="hero">
+<h1>Welcome to Masood BAI Portfolio</h1>
+</section>
 
-  <section class="dark-section" id="about">
-    <div class="section-shell">
-      <h2 class="section-heading">About Me</h2>
-      <div class="divider"></div>
-      <div class="about-grid">
-        <div class="about-col">
-          <div class="about-circle img-edu"></div>
-          <div class="about-title">Education</div>
-          <ul class="about-list">
-            <li>MSc Data Science, <strong>University of Sunderland</strong>, United Kingdom</li>
-            <li>Undergraduate Degree in Computer Science, <strong>HKBK CE</strong></li>
-          </ul>
-        </div>
-        <div class="about-col">
-          <div class="about-circle img-exp"></div>
-          <div class="about-title">Experience</div>
-          <ul class="about-list">
-            <li><strong>Data Analyst</strong> @ Citi Bank (Sep 2023 - Present)</li>
-            <li><strong>Business Data Analyst</strong> @ Cloud Centric (Feb 2022 - Aug 2023)</li>
-            <li><strong>Junior Data Analyst</strong> @ Zenoti (Dec 2020 - Jan 2022)</li>
-          </ul>
-        </div>
-        <div class="about-col">
-          <div class="about-circle img-skill"></div>
-          <div class="about-title">My Skillset</div>
-          <ul class="about-list">
-            <li>Languages: Python, SQL, R, VBA</li>
-            <li>Databases: MSSQL, MySQL, Oracle, PostgreSQL, MongoDB, Teradata</li>
-            <li>Tools: Power BI, Tableau, Excel, ETL, Azure, AWS</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="intro">
+<img src="photo.jpg" class="portrait">
+<h2>Masood BAI</h2>
+<p>Data Analyst | Power BI | SQL | Python | Cloud</p>
+</section>
 
-  <section class="project-band" id="projects">
-    <div class="section-shell">
-      <h2 class="section-heading">Relevant Projects</h2>
-      <div class="divider"></div>
-      <div class="project-sub">Explore my work in data analysis, machine learning, reporting, and decision support</div>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Fake News Detection (pdf)</h3>
-          <a class="soft-btn" href="#">Download</a>
-        </div>
-        <div class="project-card">
-          <h3>Stroke Prediction App (pdf)</h3>
-          <a class="soft-btn" href="#">Download</a>
-        </div>
-        <div class="project-card">
-          <h3>Data Pipeline & Reporting Work</h3>
-          <a class="soft-btn" href="#contact">Discuss</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="dark">
 
-  <section class="sample-section">
-    <div class="section-shell">
-      <h2 class="light-heading">A Sample of My Work!</h2>
-      <div class="light-divider"></div>
-      <div class="sample-carousel">
-        <div class="sample-track" id="sampleTrack">
-          <div class="sample-slide"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80" alt="Sample work slide 1"></div>
-          <div class="sample-slide"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Sample work slide 2"></div>
-          <div class="sample-slide"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80" alt="Sample work slide 3"></div>
-        </div>
-      </div>
-      <div class="carousel-controls">
-        <span id="slideCounter">1/3</span>
-        <button class="carousel-btn" onclick="nextSlide()">Next &#8250;</button>
-      </div>
-    </div>
-  </section>
+<div class="container">
 
-  <section class="github-band">
-    <div class="section-shell" style="text-align:center;">
-      <div class="github-title">GitHub Repository</div>
-      <a class="wide-pill" href="https://github.com/masoodds" target="_blank" rel="noopener">Click Here</a>
-    </div>
-  </section>
+<h2>About Me</h2>
 
-  <section class="resume-band" id="resume">
-    <div class="section-shell">
-      <div style="font-size: clamp(2.2rem, 3vw, 3.5rem); font-weight: 500; margin-bottom: 18px;">Resume</div>
-      <div class="divider"></div>
-      <div class="resume-row">
-        <span>Masood BAI Resume (pdf)</span>
-        <a class="resume-download" href="#">⇩ Download</a>
-      </div>
-    </div>
-  </section>
+<div class="about-grid">
 
-  <section class="skills-band">
-    <div class="section-shell">
-      <div class="skills-grid">
-        <div class="skill-box">
-          <h3>Python</h3>
-          <p>Proficient in Python for data analysis, automation, and machine learning workflows, using libraries and tools that support clean, reliable, and scalable analysis.</p>
-        </div>
-        <div class="skill-box">
-          <h3>Data Visualization</h3>
-          <p>Experienced in data visualization using Power BI, Tableau, and Excel, creating dashboards and reports that support business monitoring and decision-making.</p>
-        </div>
-        <div class="skill-box">
-          <h3>Database Management</h3>
-          <p>Strong database experience across SQL Server, MySQL, Oracle, PostgreSQL, MongoDB, and Teradata, with knowledge of querying, transformation, and data quality handling.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div>
+<div class="circle edu"></div>
+<h3>Education</h3>
+<ul>
+<li>MSc Data Science, University of Sunderland</li>
+<li>BSc Computer Science, HKBK</li>
+</ul>
+</div>
 
-  <section class="contact-hero" id="contact">
-    <div class="contact-shell">
-      <h2 class="section-heading">Contact Me</h2>
-      <div class="contact-card">
-        <h3>Questions or Comments</h3>
-        <p>Send me a message or ask me a question using this form. I will do my best to get back to you soon.</p>
-        <div class="contact-location">Stockton on Tees, England, United Kingdom</div>
-        <a class="contact-email" href="mailto:masood7572@gmail.com">masood7572@gmail.com</a>
-        <div>
-          <a class="contact-pill" href="mailto:masood7572@gmail.com">Get in Touch!</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<div>
+<div class="circle exp"></div>
+<h3>Experience</h3>
+<ul>
+<li>Data Analyst – Citi</li>
+<li>Business Data Analyst – Cloud Centric</li>
+<li>Junior Data Analyst – Zenoti</li>
+</ul>
+</div>
 
-  <section class="social-strip">
-    <div class="socials">
-      <a class="social fb" href="#" aria-label="Facebook">f</a>
-      <a class="social ig" href="#" aria-label="Instagram">◎</a>
-      <a class="social li" href="https://linkedin.com/in/masood-baig-indikar" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-    </div>
-  </section>
+<div>
+<div class="circle skill"></div>
+<h3>Skills</h3>
+<ul>
+<li>Python SQL R</li>
+<li>Power BI Tableau Excel</li>
+<li>AWS Azure ETL</li>
+</ul>
+</div>
 
-  <footer class="footer-band">
-    <p>Copyright © 2026 Masood BAI Portfolio - All Rights Reserved.</p>
-    <div class="privacy">Privacy Policy</div>
-    <div class="footer-line"></div>
-    <div>Powered by GitHub Pages</div>
-  </footer>
+</div>
 
-  <script>
-    let currentSlide = 0;
-    const track = document.getElementById('sampleTrack');
-    const counter = document.getElementById('slideCounter');
-    const totalSlides = 3;
+</div>
 
-    function updateSlide() {
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-      counter.textContent = `${currentSlide + 1}/${totalSlides}`;
-    }
+</section>
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSlide();
-    }
-  </script>
+<section class="projects">
+
+<div class="container">
+
+<h2>Projects</h2>
+
+<div class="project-grid">
+
+<div class="card">
+Fake News Detection
+</div>
+
+<div class="card">
+Stroke Prediction
+</div>
+
+<div class="card">
+Dashboard Reporting
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>Contact</h2>
+
+<p>Stockton on Tees, UK</p>
+
+<p>masood7572@gmail.com</p>
+
+</section>
+
+<section class="footer">
+
+Masood BAI Portfolio
+
+</section>
+
 </body>
 </html>
