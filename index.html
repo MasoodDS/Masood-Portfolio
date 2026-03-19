@@ -17,7 +17,6 @@
       --slate-dark: #6f8092;
       --shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
       --max: 1180px;
-      --radius: 22px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,10 +27,10 @@
       color: var(--text);
       line-height: 1.6;
     }
+
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     .container { width: min(var(--max), 92%); margin: 0 auto; }
-    section { padding: 0; }
 
     .hero-banner {
       min-height: 390px;
@@ -46,6 +45,7 @@
         linear-gradient(180deg, #07111f 0%, #0a1830 45%, #0d223f 100%);
       border-top: 4px solid #19b8bf;
     }
+
     .hero-banner::before {
       content: "";
       position: absolute;
@@ -60,6 +60,7 @@
       opacity: .9;
       pointer-events: none;
     }
+
     .hero-banner::after {
       content: "";
       position: absolute;
@@ -72,6 +73,7 @@
       transform: scaleX(1.35);
       opacity: .95;
     }
+
     .hero-inner {
       position: relative;
       z-index: 1;
@@ -82,6 +84,7 @@
       gap: 28px;
       padding: 0 10px;
     }
+
     .hero-title {
       color: white;
       font-weight: 800;
@@ -92,6 +95,7 @@
       max-width: 860px;
       text-align: left;
     }
+
     .hero-cta {
       background: var(--slate);
       color: white;
@@ -106,35 +110,44 @@
       box-shadow: var(--shadow);
       transition: transform .22s ease, background .22s ease;
     }
-    .hero-cta:hover { transform: translateY(-2px); background: var(--slate-dark); }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      background: var(--slate-dark);
+    }
 
     .intro-section {
       background: #ebebec;
       padding: 58px 0 46px;
     }
+
     .intro-grid {
       display: grid;
       grid-template-columns: 1.02fr 1fr;
       align-items: center;
       gap: 56px;
     }
+
     .portrait-wrap {
       display: flex;
       justify-content: center;
     }
+
     .portrait {
       width: min(560px, 88vw);
       aspect-ratio: 1/1;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center 45%;
       box-shadow: 0 10px 30px rgba(0,0,0,0.14);
       background: #d9d9d9;
     }
+
     .intro-copy {
       text-align: center;
       padding-right: 18px;
     }
+
     .intro-copy h2 {
       font-size: clamp(2.2rem, 4vw, 4rem);
       font-weight: 800;
@@ -142,6 +155,7 @@
       margin-bottom: 18px;
       text-transform: uppercase;
     }
+
     .intro-copy p {
       color: #525862;
       font-size: clamp(1rem, 1.8vw, 1.2rem);
@@ -149,6 +163,7 @@
       max-width: 640px;
       margin: 0 auto 28px;
     }
+
     .resume-pill {
       display: inline-flex;
       align-items: center;
@@ -167,12 +182,14 @@
     .dark-section {
       background: #0f1013;
       color: white;
-      padding: 56px 0 56px;
+      padding: 56px 0;
     }
+
     .section-shell {
       width: min(var(--max), 92%);
       margin: 0 auto;
     }
+
     .section-heading,
     .light-heading {
       font-size: clamp(2.2rem, 3.5vw, 4rem);
@@ -182,22 +199,28 @@
       letter-spacing: 0.02em;
       margin-bottom: 18px;
     }
+
     .divider,
     .light-divider {
       height: 1px;
       background: rgba(255,255,255,0.38);
       margin-bottom: 34px;
     }
-    .light-divider { background: rgba(20,20,20,0.25); }
+
+    .light-divider {
+      background: rgba(20,20,20,0.25);
+    }
 
     .about-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 46px;
     }
+
     .about-col {
       text-align: left;
     }
+
     .about-circle {
       width: min(360px, 100%);
       aspect-ratio: 1/1;
@@ -206,39 +229,42 @@
       overflow: hidden;
       position: relative;
       background: #d0d5da;
+      background-size: cover;
+      background-position: center;
     }
-    .about-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+
     .img-edu {
-      background:
-        linear-gradient(rgba(110,140,190,.22), rgba(110,140,190,.22)),
-        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80') center/cover;
+      background-image:
+        linear-gradient(rgba(0,0,0,.20), rgba(0,0,0,.20)),
+        url('education.jpg');
     }
+
     .img-exp {
-      background:
-        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)),
-        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80') center/cover;
+      background-image:
+        linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.22)),
+        url('experience.jpg');
     }
+
     .img-skill {
-      background:
-        linear-gradient(rgba(15,20,26,.18), rgba(15,20,26,.18)),
-        url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80') center/cover;
+      background-image:
+        linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.22)),
+        url('skills.jpg');
     }
+
     .about-title {
       text-align: center;
       font-size: 1.2rem;
       margin-bottom: 18px;
       color: #f3f4f6;
     }
+
     .about-list {
       color: #a9adb3;
       font-size: 0.98rem;
       line-height: 1.7;
       padding-left: 24px;
     }
+
     .about-list li { margin-bottom: 10px; }
     .about-list strong { color: #d8dde6; }
 
@@ -247,6 +273,7 @@
       color: white;
       padding: 58px 0 50px;
     }
+
     .project-sub {
       text-align: center;
       font-style: italic;
@@ -254,11 +281,13 @@
       color: rgba(255,255,255,0.9);
       margin-bottom: 34px;
     }
+
     .project-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 34px;
     }
+
     .project-card {
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(92, 108, 127, 0.18);
@@ -269,11 +298,13 @@
       flex-direction: column;
       justify-content: space-between;
     }
+
     .project-card h3 {
       font-size: 1rem;
       font-weight: 500;
       margin-bottom: 26px;
     }
+
     .soft-btn {
       align-self: center;
       background: #f5f2ee;
@@ -291,23 +322,28 @@
       background: #ebebec;
       padding: 48px 0 40px;
     }
+
     .sample-carousel {
       position: relative;
       overflow: hidden;
     }
+
     .sample-track {
       display: flex;
       transition: transform .45s ease;
     }
+
     .sample-slide {
       min-width: 100%;
       background: #d9dde2;
     }
+
     .sample-slide img {
       width: 100%;
       aspect-ratio: 16 / 9;
       object-fit: cover;
     }
+
     .carousel-controls {
       display: flex;
       justify-content: center;
@@ -317,6 +353,7 @@
       color: #69768a;
       font-size: 0.95rem;
     }
+
     .carousel-btn {
       border: none;
       background: transparent;
@@ -330,12 +367,14 @@
       color: white;
       padding: 54px 0 48px;
     }
+
     .github-title {
       font-size: clamp(2rem, 3vw, 3rem);
       margin-bottom: 28px;
       text-align: left;
       font-weight: 500;
     }
+
     .wide-pill {
       display: inline-flex;
       width: min(760px, 100%);
@@ -355,6 +394,7 @@
       color: white;
       padding: 50px 0 44px;
     }
+
     .resume-row {
       background: rgba(95, 107, 123, 0.42);
       display: flex;
@@ -364,7 +404,9 @@
       padding: 18px 24px;
       margin-top: 10px;
     }
+
     .resume-row span { font-size: 1.02rem; }
+
     .resume-download {
       color: white;
       font-size: 0.98rem;
@@ -376,16 +418,19 @@
       color: white;
       padding: 42px 0 60px;
     }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 56px;
     }
+
     .skill-box h3 {
       font-size: 1.25rem;
       font-weight: 500;
       margin-bottom: 20px;
     }
+
     .skill-box p {
       color: #b3b7bd;
       font-size: 0.99rem;
@@ -396,19 +441,24 @@
       position: relative;
       min-height: 880px;
       background:
-        linear-gradient(rgba(10,10,10,0.42), rgba(10,10,10,0.42)),
-        url('photo.jpg') center 20% / cover no-repeat;
+        linear-gradient(rgba(12,12,12,0.42), rgba(12,12,12,0.42)),
+        url('contact-bg.jpg') center center / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 70px 0;
     }
+
     .contact-shell {
       width: min(var(--max), 92%);
       text-align: center;
       color: white;
     }
-    .contact-shell .section-heading { margin-bottom: 28px; }
+
+    .contact-shell .section-heading {
+      margin-bottom: 28px;
+    }
+
     .contact-card {
       width: min(820px, 100%);
       margin: 0 auto;
@@ -417,11 +467,13 @@
       padding: 56px 42px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.18);
     }
+
     .contact-card h3 {
       font-size: clamp(1.8rem, 3vw, 3rem);
       font-weight: 500;
       margin-bottom: 22px;
     }
+
     .contact-card p {
       color: #5d636d;
       font-size: 1.02rem;
@@ -429,18 +481,21 @@
       max-width: 620px;
       margin: 0 auto 30px;
     }
+
     .contact-location {
       font-size: clamp(1.8rem, 3vw, 3.2rem);
       font-weight: 500;
       margin-bottom: 16px;
       color: #20232a;
     }
+
     .contact-email {
       color: #7b8ea5;
       font-size: 1.05rem;
       margin-bottom: 34px;
       display: inline-block;
     }
+
     .contact-pill {
       display: inline-flex;
       align-items: center;
@@ -460,12 +515,14 @@
       padding: 44px 0 54px;
       text-align: center;
     }
+
     .socials {
       display: flex;
       justify-content: center;
       gap: 42px;
       margin-bottom: 8px;
     }
+
     .social {
       width: 58px;
       height: 58px;
@@ -477,6 +534,7 @@
       font-size: 1.5rem;
       font-weight: 700;
     }
+
     .fb { background: #2f74da; }
     .ig { background: #e64980; }
     .li { background: #2f74ba; }
@@ -488,13 +546,16 @@
       padding: 72px 20px 90px;
       font-size: 0.98rem;
     }
+
     .footer-band p { margin-bottom: 30px; }
+
     .footer-band .privacy {
       display: inline-block;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       margin-bottom: 42px;
     }
+
     .footer-line {
       width: 60px;
       height: 1px;
@@ -507,20 +568,15 @@
       .intro-grid,
       .about-grid,
       .project-grid,
-      .skills-grid,
-      .contact-card {
-        width: 100%;
-      }
-      .intro-grid,
-      .about-grid,
-      .project-grid,
       .skills-grid {
         grid-template-columns: 1fr;
       }
+
       .hero-inner {
         flex-direction: column;
         text-align: center;
       }
+
       .hero-title { text-align: center; }
       .intro-copy { padding-right: 0; }
       .about-circle { max-width: 320px; }
@@ -630,9 +686,9 @@
       <div class="light-divider"></div>
       <div class="sample-carousel">
         <div class="sample-track" id="sampleTrack">
-          <div class="sample-slide"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80" alt="Sample work slide 1"></div>
-          <div class="sample-slide"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Sample work slide 2"></div>
-          <div class="sample-slide"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80" alt="Sample work slide 3"></div>
+          <div class="sample-slide"><img src="sample1.jpg" alt="Sample work 1"></div>
+          <div class="sample-slide"><img src="sample2.jpg" alt="Sample work 2"></div>
+          <div class="sample-slide"><img src="sample3.jpg" alt="Sample work 3"></div>
         </div>
       </div>
       <div class="carousel-controls">
@@ -684,7 +740,7 @@
       <h2 class="section-heading">Contact Me</h2>
       <div class="contact-card">
         <h3>Questions or Comments</h3>
-        <p>Send me a message or ask me a question using this form. I will do my best to get back to you soon.</p>
+        <p>Send me a message or ask me a question. I will do my best to get back to you soon.</p>
         <div class="contact-location">Stockton on Tees, England, United Kingdom</div>
         <a class="contact-email" href="mailto:masood7572@gmail.com">masood7572@gmail.com</a>
         <div>
