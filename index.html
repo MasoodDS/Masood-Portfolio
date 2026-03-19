@@ -1,246 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Masood BAI | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masood BAI | Portfolio</title>
+  <meta name="description" content="Masood BAI portfolio - Data Analyst with reporting, BI, ETL, and cloud data skills." />
 
-<style>
+  <style>
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#e9eaec;
-color:#111;
-}
+    :root {
+      --page-bg: #e9eaec;
+      --white: #ffffff;
+      --text: #17191d;
+      --muted: #5f6670;
+      --line: rgba(255,255,255,0.35);
+      --dark: #0f1013;
+      --slate: #7c8da0;
+      --slate-dark: #6f8092;
+      --shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+      --max: 1180px;
+    }
 
-section{
-padding:60px 0;
-}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--page-bg);
+    }
 
-.container{
-width:90%;
-max-width:1100px;
-margin:auto;
-}
+    .hero-banner{
+      background:linear-gradient(180deg,#07111f,#0d223f);
+      color:white;
+      text-align:center;
+      padding:80px 0;
+    }
 
-h1,h2,h3{
-margin:0 0 15px 0;
-}
+    .intro-section{
+      background:#f0f0f0;
+      text-align:center;
+      padding:50px 0;
+    }
 
-.hero{
-background:linear-gradient(180deg,#07111f,#0d223f);
-color:white;
-padding:80px 0;
-text-align:center;
-}
+    .portrait{
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      object-fit:cover;
+    }
 
-.hero h1{
-font-size:40px;
-}
+    .dark-section{
+      background:#0f1013;
+      color:white;
+      padding:60px 0;
+    }
 
-.intro{
-background:#f0f0f0;
-text-align:center;
-}
+    .about-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:40px;
+      width:90%;
+      max-width:1100px;
+      margin:auto;
+    }
 
-.portrait{
-width:320px;
-height:320px;
-border-radius:50%;
-object-fit:cover;
-display:block;
-margin:auto;
-}
+    .about-circle{
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      margin:auto;
+      background-size:cover;
+      background-position:center;
+    }
 
-.dark{
-background:#0f1013;
-color:white;
-}
+    /* ===== FIXED EDUCATION IMAGE ===== */
 
-.about-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
-}
+    .img-edu{
+      background:
+      linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+      url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80")
+      center/cover;
+    }
 
-.circle{
-width:260px;
-height:260px;
-border-radius:50%;
-margin:auto;
-background-size:cover;
-background-position:center;
-}
+    .img-exp{
+      background:
+      linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+      url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80")
+      center/cover;
+    }
 
-/* EDUCATION IMAGE */
-.edu{
-background:
-linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
-url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80");
-}
+    .img-skill{
+      background:
+      linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+      url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80")
+      center/cover;
+    }
 
-/* EXPERIENCE IMAGE */
-.exp{
-background:
-linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
-url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80");
-}
+    .project-band{
+      background:#8192a5;
+      color:white;
+      padding:50px;
+      text-align:center;
+    }
 
-/* SKILLS IMAGE */
-.skill{
-background:
-linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
-url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80");
-}
+    .contact-hero{
+      background:
+      linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+      url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+      background-size:cover;
+      color:white;
+      text-align:center;
+      padding:100px 0;
+    }
 
-ul{
-color:#ccc;
-}
+    .footer{
+      background:#8192a5;
+      color:white;
+      text-align:center;
+      padding:40px;
+    }
 
-.projects{
-background:#8192a5;
-color:white;
-text-align:center;
-}
+  </style>
 
-.project-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.card{
-background:rgba(255,255,255,0.2);
-padding:20px;
-}
-
-.contact{
-background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
-background-size:cover;
-color:white;
-text-align:center;
-padding:120px 0;
-}
-
-.footer{
-background:#8192a5;
-color:white;
-text-align:center;
-padding:40px;
-}
-
-@media(max-width:900px){
-.about-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-.project-grid{
-grid-template-columns:1fr;
-}
-}
-
-</style>
 </head>
 
 <body>
 
-<section class="hero">
-<h1>Welcome to Masood BAI Portfolio</h1>
-</section>
+  <section class="hero-banner">
+    <h1>Welcome to Masood BAI Portfolio</h1>
+  </section>
 
-<section class="intro">
-<img src="photo.jpg" class="portrait">
-<h2>Masood BAI</h2>
-<p>Data Analyst | Power BI | SQL | Python | Cloud</p>
-</section>
 
-<section class="dark">
+  <section class="intro-section">
 
-<div class="container">
+    <img src="photo.jpg" class="portrait">
 
-<h2>About Me</h2>
+    <h2>Masood BAI</h2>
 
-<div class="about-grid">
+    <p>Data Analyst | Power BI | SQL | Python | Cloud</p>
 
-<div>
-<div class="circle edu"></div>
-<h3>Education</h3>
-<ul>
-<li>MSc Data Science, University of Sunderland</li>
-<li>BSc Computer Science, HKBK</li>
-</ul>
-</div>
+  </section>
 
-<div>
-<div class="circle exp"></div>
-<h3>Experience</h3>
-<ul>
-<li>Data Analyst – Citi</li>
-<li>Business Data Analyst – Cloud Centric</li>
-<li>Junior Data Analyst – Zenoti</li>
-</ul>
-</div>
 
-<div>
-<div class="circle skill"></div>
-<h3>Skills</h3>
-<ul>
-<li>Python SQL R</li>
-<li>Power BI Tableau Excel</li>
-<li>AWS Azure ETL</li>
-</ul>
-</div>
+  <section class="dark-section">
 
-</div>
+    <h2 style="text-align:center;">About Me</h2>
 
-</div>
+    <div class="about-grid">
 
-</section>
+      <div>
 
-<section class="projects">
+        <div class="about-circle img-edu"></div>
 
-<div class="container">
+        <h3>Education</h3>
 
-<h2>Projects</h2>
+        <ul>
+          <li>MSc Data Science – University of Sunderland</li>
+          <li>BSc Computer Science – HKBK</li>
+        </ul>
 
-<div class="project-grid">
+      </div>
 
-<div class="card">
-Fake News Detection
-</div>
 
-<div class="card">
-Stroke Prediction
-</div>
+      <div>
 
-<div class="card">
-Dashboard Reporting
-</div>
+        <div class="about-circle img-exp"></div>
 
-</div>
+        <h3>Experience</h3>
 
-</div>
+        <ul>
+          <li>Data Analyst – Citi</li>
+          <li>Business Data Analyst – Cloud Centric</li>
+          <li>Junior Data Analyst – Zenoti</li>
+        </ul>
 
-</section>
+      </div>
 
-<section class="contact">
 
-<h2>Contact</h2>
+      <div>
 
-<p>Stockton on Tees, UK</p>
+        <div class="about-circle img-skill"></div>
 
-<p>masood7572@gmail.com</p>
+        <h3>Skills</h3>
 
-</section>
+        <ul>
+          <li>Python SQL R</li>
+          <li>Power BI Tableau Excel</li>
+          <li>AWS Azure ETL</li>
+        </ul>
 
-<section class="footer">
+      </div>
 
-Masood BAI Portfolio
+    </div>
 
-</section>
+  </section>
+
+
+  <section class="project-band">
+
+    <h2>Projects</h2>
+
+    Fake News Detection • Stroke Prediction • Dashboard Reporting
+
+  </section>
+
+
+  <section class="contact-hero">
+
+    <h2>Contact</h2>
+
+    <p>Stockton on Tees, UK</p>
+
+    <p>masood7572@gmail.com</p>
+
+  </section>
+
+
+  <section class="footer">
+
+    Masood BAI Portfolio
+
+  </section>
+
 
 </body>
 </html>
