@@ -181,13 +181,14 @@
     }
 
     .hero-btn.secondary {
-      background: transparent;
+      background: var(--blue);
       color: white;
-      border: 2px solid rgba(255,255,255,0.32);
+      border: 2px solid var(--blue);
     }
 
     .hero-btn.secondary:hover {
-      border-color: white;
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
       transform: translateY(-2px);
     }
 
@@ -239,8 +240,8 @@
     .resume-pill {
       min-width: 170px;
       padding: 16px 28px;
-      background: var(--surface);
-      color: var(--navy);
+      background: var(--blue);
+      color: white;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       font-size: 0.88rem;
@@ -249,6 +250,7 @@
     }
 
     .resume-pill:hover {
+      background: var(--blue-dark);
       transform: translateY(-2px);
     }
 
@@ -405,20 +407,21 @@
 
     .soft-btn {
       align-self: center;
-      background: white;
-      color: var(--navy);
+      background: var(--blue);
+      color: white;
       min-width: 152px;
       padding: 14px 22px;
       letter-spacing: 0.12em;
       font-size: 0.84rem;
       text-transform: uppercase;
-      border: 2px solid transparent;
+      border: 2px solid var(--blue);
     }
 
     .soft-btn:hover {
       transform: translateY(-2px);
-      background: #eff6ff;
-      color: var(--blue);
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      color: white;
     }
 
     .sample-section {
