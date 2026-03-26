@@ -144,18 +144,9 @@
     }
 
     .hero-actions {
-      display: grid;
-      grid-template-columns: repeat(5, auto);
+      display: flex;
       gap: 16px;
-      justify-content: center;
-    }
-
-    .hero-actions a:nth-child(6) {
-      grid-column: 2;
-    }
-
-    .hero-actions a:nth-child(7) {
-      grid-column: 4;
+      flex-wrap: wrap;
     }
 
     .hero-btn,
@@ -713,7 +704,6 @@
       }
 
       .hero-actions {
-        display: flex;
         flex-direction: column;
         align-items: stretch;
       }
