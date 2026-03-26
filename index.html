@@ -424,32 +424,55 @@
     }
 
     .achievement-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
       margin-top: 10px;
     }
 
-    .achievement-card {
+    .cert-row,
+    .badge-row {
+      display: grid;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .cert-row {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .badge-row {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cert-card,
+    .badge-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 26px;
+      padding: 18px;
       box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cert-card {
+      min-height: 260px;
+    }
+
+    .badge-card {
       min-height: 220px;
     }
 
-    .achievement-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 12px;
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .achievement-card p {
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.75;
+    .cert-card img,
+    .badge-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
     }
 
     .github-band {
@@ -642,9 +665,16 @@
       .hero-inner,
       .about-grid,
       .project-grid,
-      .skills-grid,
-      .achievement-grid {
+      .skills-grid {
         grid-template-columns: 1fr;
+      }
+
+      .cert-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .badge-row {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .hero-inner {
@@ -686,10 +716,14 @@
       }
 
       .project-card,
-      .achievement-card,
       .skill-box,
       .about-col {
         min-height: auto;
+      }
+
+      .cert-row,
+      .badge-row {
+        grid-template-columns: 1fr;
       }
 
       .resume-row {
@@ -809,20 +843,34 @@
 
   <section class="sample-section" id="certifications">
     <div class="section-shell">
-      <h2 class="light-heading">Certifications / Achievements</h2>
+      <h2 class="light-heading">Certifications</h2>
       <div class="light-divider"></div>
       <div class="achievement-grid">
-        <div class="achievement-card">
-          <h3>MSc Data Science</h3>
-          <p>Completed a Master’s in Data Science at the University of Sunderland, strengthening my capability in machine learning, analytics, Python, data modelling, and applied project delivery.</p>
+        <div class="cert-row">
+          <div class="cert-card">
+            <img src="Masood BAI (1).png" alt="Google Data Analytics Certificate" />
+          </div>
+          <div class="cert-card">
+            <img src="Masood BAI (2).png" alt="Microsoft Azure Data Fundamentals Certificate" />
+          </div>
+          <div class="cert-card">
+            <img src="Masood BAI (3).png" alt="Snowflake Data Engineering Professional Certificate" />
+          </div>
+          <div class="cert-card">
+            <img src="Screenshot 2026-03-26 at 18.42.18.png" alt="Certificate image" />
+          </div>
         </div>
-        <div class="achievement-card">
-          <h3>Professional Project Portfolio</h3>
-          <p>Built end-to-end case studies across machine learning, operational reporting, dashboarding, exploratory data analysis, and workflow improvement to showcase practical business impact.</p>
-        </div>
-        <div class="achievement-card">
-          <h3>Stakeholder-Focused Delivery</h3>
-          <p>Presented analytical findings, reporting outputs, and project outcomes to stakeholders across different settings, translating technical work into clear and decision-ready insights.</p>
+
+        <div class="badge-row">
+          <div class="badge-card">
+            <img src="135nbpdPIIVuekqyYsXes3g.png" alt="AWS Certified Data Engineer Associate Badge" />
+          </div>
+          <div class="badge-card">
+            <img src="fabric_analytics_engineer_logo.jpg" alt="Microsoft Fabric Analytics Engineer Associate Badge" />
+          </div>
+          <div class="badge-card">
+            <img src="Data Engineer Associate Badge-4.webp" alt="Databricks Lakehouse Data Engineer Associate Badge" />
+          </div>
         </div>
       </div>
     </div>
