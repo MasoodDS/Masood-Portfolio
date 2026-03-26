@@ -389,8 +389,16 @@
     .project-card h3 {
       font-size: 1.02rem;
       font-weight: 600;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
       line-height: 1.5;
+    }
+
+    .project-intro {
+      color: rgba(255,255,255,0.84);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 22px;
+      min-height: 96px;
     }
 
     .soft-btn {
@@ -681,6 +689,10 @@
       .hero-inner {
         gap: 32px;
       }
+
+      .project-intro {
+        min-height: auto;
+      }
     }
 
     @media (max-width: 760px) {
@@ -806,6 +818,9 @@
       <div class="project-grid">
         <div class="project-card">
           <h3>Fake News Detection (pdf)</h3>
+          <p class="project-intro">
+            Built a machine learning solution for fake news detection using NLP, feature engineering, and comparative model evaluation to identify the most effective classification approach.
+          </p>
           <a class="soft-btn" href="fake_news_detection_project_case_study_final_clean.pdf" target="_blank" rel="noopener">
             Download
           </a>
@@ -813,6 +828,9 @@
 
         <div class="project-card">
           <h3>Handover App Project (pdf)</h3>
+          <p class="project-intro">
+            Designed and developed a structured digital handover solution with SQL-backed workflows, approval tracking, version control, and audit-friendly change logging.
+          </p>
           <a class="soft-btn" href="handover_app_case_study_fixed.pdf" target="_blank" rel="noopener">
             Download
           </a>
@@ -820,6 +838,9 @@
 
         <div class="project-card">
           <h3>Families First Analysis (pdf)</h3>
+          <p class="project-intro">
+            Delivered an in-depth data analysis case study using exploratory analysis, trend interpretation, and stakeholder-focused reporting to generate clear operational insight.
+          </p>
           <a class="soft-btn" href="afc_families_first_case_study_yellow_v2.pdf" target="_blank" rel="noopener">
             Download
           </a>
